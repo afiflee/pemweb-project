@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateAsesiTable extends Migration
@@ -28,9 +29,9 @@ class CreateAsesiTable extends Migration
             $table->string('kualifikasi_pendidikan');
             $table->string('id_unit');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string('edited_by');
-            $table->timestamp('edited_at')->nullable();
+            $table->timestamp('edited_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
             $table->foreignId('id_user')->constrained('users');
         });
     }
