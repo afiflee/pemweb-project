@@ -14,9 +14,8 @@ class CreateInstrumenAsesmenKompetensiTable extends Migration
     public function up()
     {
         Schema::create('instrumen_asesmen_kompetensi', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_ref_unit_kompetensi')->constrained('ref_unit_kompetensi');
+            $table->foreignId('id_ref_unit_kompetensi')->constrained('ref_unit_kompetensi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('instrumen_pertanyaan');
             $table->string('status_instrumen');
             $table->boolean('is_aktif');

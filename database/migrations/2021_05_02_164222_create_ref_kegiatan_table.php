@@ -14,12 +14,11 @@ class CreateRefKegiatanTable extends Migration
     public function up()
     {
         Schema::create('ref_kegiatan', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('nama_kegiatan');
             $table->text('deskripsi');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 

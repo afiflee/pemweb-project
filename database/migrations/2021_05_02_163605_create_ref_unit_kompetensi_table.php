@@ -14,7 +14,6 @@ class CreateRefUnitKompetensiTable extends Migration
     public function up()
     {
         Schema::create('ref_unit_kompetensi', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('nama');
             $table->boolean('is_aktif');

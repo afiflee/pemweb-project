@@ -14,10 +14,9 @@ class CreatePendaftarSyaratTable extends Migration
     public function up()
     {
         Schema::create('pendaftar_syarat', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_syarat_sertifikasi')->constrained('syarat_sertifikasi');
-            $table->foreignId('id_pendaftar')->constrained('pendaftar');
+            $table->foreignId('id_syarat_sertifikasi')->constrained('syarat_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_pendaftar')->constrained('pendaftar')->onUpdate('cascade')->onDelete('cascade');
             $table->string('status_verifikasi_syarat');
             $table->string('path_bukti');
             $table->string('verifikasi_asesor');
@@ -25,9 +24,8 @@ class CreatePendaftarSyaratTable extends Migration
             $table->string('verified_by');
             $table->date('verified_at');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->string('edited_by');
-            $table->timestamp('edited_at')->nullable();
         });
     }
 

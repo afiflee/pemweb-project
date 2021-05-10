@@ -15,10 +15,9 @@ class CreatePendaftarInstrumenTable extends Migration
     public function up()
     {
         Schema::create('pendaftar_instrumen', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_pendaftar')->constrained('pendaftar');
-            $table->foreignId('id_instrumen_asesmen')->constrained('instrumen_asesmen_kompetensi');
+            $table->foreignId('id_pendaftar')->constrained('pendaftar')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_instrumen_asesmen')->constrained('instrumen_asesmen_kompetensi')->onUpdate('cascade')->onDelete('cascade');
             $table->text('jawaban_self_asesmen');
             $table->string('path_bukti');
             $table->text('komentar_bukti');
@@ -26,9 +25,8 @@ class CreatePendaftarInstrumenTable extends Migration
             $table->string('verified_by');
             $table->date('verified_at');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->string('edited_by');
-            $table->timestamp('edited_at')->nullable();
         });
     }
 

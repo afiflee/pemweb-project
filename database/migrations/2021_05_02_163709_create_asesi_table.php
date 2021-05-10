@@ -15,8 +15,8 @@ class CreateAsesiTable extends Migration
     public function up()
     {
         Schema::create('asesi', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->string('nama');
             $table->char('nim',8);
             $table->char('nik', 20);
             $table->string('tempat_lahir');
@@ -27,12 +27,11 @@ class CreateAsesiTable extends Migration
             $table->string('no_telpon');
             $table->string('email');
             $table->string('kualifikasi_pendidikan');
-            $table->string('id_unit');
+            $table->string('id_unit')->constrained('ref_unit_kompetensi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('created_by');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
             $table->string('edited_by');
-            $table->timestamp('edited_at')->default(DB::raw('CURRENT_TIMESTAMP'))->nullable();
-            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

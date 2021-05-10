@@ -14,7 +14,6 @@ class CreateRefKuesionerTable extends Migration
     public function up()
     {
         Schema::create('ref_kuesioner', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->text('pertanyaan');
             $table->boolean('is_aktif');

@@ -14,14 +14,13 @@ class CreateJadwalTable extends Migration
     public function up()
     {
         Schema::create('jadwal', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_penawaran_sertifikasi')->constrained('penawaran_sertifikasi');
-            $table->foreignId('id_kegiatan')->constrained('ref_kegiatan');
+            $table->foreignId('id_penawaran_sertifikasi')->constrained('penawaran_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_kegiatan')->constrained('ref_kegiatan')->onUpdate('cascade')->onDelete('cascade');
             $table->date('tanggal_awal');
             $table->date('tanggal_akhir');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->boolean('is_show');
             $table->text('deskripsi');
         });

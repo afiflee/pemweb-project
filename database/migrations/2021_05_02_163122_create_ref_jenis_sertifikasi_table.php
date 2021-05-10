@@ -14,14 +14,12 @@ class CreateRefJenisSertifikasiTable extends Migration
     public function up()
     {
         Schema::create('ref_jenis_sertifikasi', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('status_jenis_sertifikasi');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->string('edited_by');
-            $table->timestamp('edited_at')->nullable();
             $table->boolean('is_aktif');
         });
     }

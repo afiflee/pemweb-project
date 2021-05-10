@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\sertifikasi;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\rjsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/index', [HomeController::class, 'tabel']);
+
+//tabel ref_jenis_sertifikasi
+Route::get('/index/rjs', [rjscontroller::class, 'create']);
+Route::post('/index/rjs', [rjscontroller::class, 'store']);

@@ -14,10 +14,9 @@ class CreateAsesorPendaftarTable extends Migration
     public function up()
     {
         Schema::create('asesor_pendaftar', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_asesor_jenis_sertifikasi')->constrained('asesor_jenis_sertifikasi');
-            $table->foreignId('id_pendaftar')->constrained('pendaftar');
+            $table->foreignId('id_asesor_jenis_sertifikasi')->constrained('asesor_jenis_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_pendaftar')->constrained('pendaftar')->onUpdate('cascade')->onDelete('cascade');
             $table->string('hasil');
         });
     }

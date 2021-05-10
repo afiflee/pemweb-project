@@ -14,13 +14,12 @@ class CreatePendaftarKuesionerTable extends Migration
     public function up()
     {
         Schema::create('pendaftar_kuesioner', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->foreignId('id_pendaftar')->constrained('pendaftar');
-            $table->foreignId('id_kuesioner')->constrained('ref_kuesioner');
+            $table->foreignId('id_pendaftar')->constrained('pendaftar')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_kuesioner')->constrained('ref_kuesioner')->onUpdate('cascade')->onDelete('cascade');
             $table->text('jawaban');
             $table->string('created_by');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->string('edited_by');
         });
     }
