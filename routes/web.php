@@ -25,5 +25,13 @@ Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/index', [HomeController::class, 'tabel']);
 
 //tabel ref_jenis_sertifikasi
+// Route::get('/index/rjs', [rjscontroller::class, 'create']);
+// Route::post('/index/rjs', [rjscontroller::class, 'store']);
+
+//tabel ref_jenis_sertifikasi
 Route::get('/index/rjs', [rjscontroller::class, 'create']);
+Route::get('/index/datarjs', [rjscontroller::class, 'index']);
 Route::post('/index/rjs', [rjscontroller::class, 'store']);
+Route::delete('/datarjs/{refjenissertifikasi}', [rjscontroller::class, 'destroy']);
+Route::get('/datarjs/{refjenissertifikasi}/edit', [rjscontroller::class, 'edit']);
+Route::put('/datarjs/{refjenissertifikasi}', [rjscontroller::class, 'update']);

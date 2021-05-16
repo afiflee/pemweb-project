@@ -20,7 +20,8 @@ class rjscontroller extends Controller
      */
     public function index()
     {
-        //
+        $refjenissertifikasi = refjenissertifikasi::all();
+        return view('read.rjs', ['rjs' => $refjenissertifikasi]);
     }
 
     /**
@@ -41,13 +42,23 @@ class rjscontroller extends Controller
      */
     public function store(Request $request)
     {
-        $refjenissertif = new refjenissertifikasi;
-        $refjenissertif->nama = $request->nama;
-        $refjenissertif->status_jenis_sertifikasi = $request->status_jenis_sertifikasi;
-        $refjenissertif->created_by = $request->created_by;
-        $refjenissertif->edited_by = $request->edited_by;
-        $refjenissertif->is_aktif = $request->is_aktif;
-        $refjenissertif->save();
+        // $refjenissertif = new refjenissertifikasi;
+        // $refjenissertif->nama = $request->nama;
+        // $refjenissertif->status_jenis_sertifikasi = $request->status_jenis_sertifikasi;
+        // $refjenissertif->created_by = $request->created_by;
+        // $refjenissertif->edited_by = $request->edited_by;
+        // $refjenissertif->is_aktif = $request->is_aktif;
+        // $refjenissertif->save();
+
+        // refjenissertifikasi::create([
+        //     'nama' => $request->nama,
+        //     'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
+        //     'created_by' => $request->created_by,
+        //     'edited_by' => $request->edited_by,
+        //     'is_aktif' => $request->is_aktif
+        // ]);
+        
+        refjenissertifikasi::create($request->all());
 
         return redirect('/index/rjs')->with('status', 'data berhasil masuk');
     }
@@ -71,7 +82,7 @@ class rjscontroller extends Controller
      */
     public function edit(refjenissertifikasi $refjenissertifikasi)
     {
-        //
+        return view('edit.rjs', compact('refjenissertifikasi'));
     }
 
     /**
@@ -83,7 +94,16 @@ class rjscontroller extends Controller
      */
     public function update(Request $request, refjenissertifikasi $refjenissertifikasi)
     {
-        //
+        refjenissertifikasi::where('id', $refjenissertifikasi->id)
+            ->update([
+                'nama' => $request->nama,
+                'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
+                'created_by' => $request->created_by,
+                'edited_by' => $request->edited_by,
+                'is_aktif' => $request->is_aktif
+            ]);
+        return redirect('/index/datarjs')->with('status', 'data berhasil diubah');
+        // return $refjenissertifikasi;
     }
 
     /**
@@ -94,6 +114,8 @@ class rjscontroller extends Controller
      */
     public function destroy(refjenissertifikasi $refjenissertifikasi)
     {
-        //
+        refjenissertifikasi::destroy($refjenissertifikasi->id);
+        return redirect('/index/datarjs')->with('status', 'data berhasil dihapus');
+        // return $refjenissertifikasi;
     }
 }
