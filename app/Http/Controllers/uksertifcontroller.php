@@ -20,7 +20,8 @@ class uksertifcontroller extends Controller
      */
     public function index()
     {
-        //
+        $uksertif = unitkompetensisertifikasi::all();
+        return view('read.uksertif', compact('uksertif'));
     }
 
     /**
@@ -69,7 +70,7 @@ class uksertifcontroller extends Controller
      */
     public function edit(unitkompetensisertifikasi $unitkompetensisertifikasi)
     {
-        //
+        return view('edit.uksertif', compact('unitkompetensisertifikasi'));
     }
 
     /**
@@ -81,7 +82,13 @@ class uksertifcontroller extends Controller
      */
     public function update(Request $request, unitkompetensisertifikasi $unitkompetensisertifikasi)
     {
-        //
+        unitkompetensisertifikasi::where('id', $unitkompetensisertifikasi->id)
+            ->update([
+                'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
+                'id_ref_kompetensi' => $request->id_ref_kompetensi,
+                'is_aktif' => $request->is_aktif
+            ]);
+        return redirect('/index/datauksertif')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -92,6 +99,7 @@ class uksertifcontroller extends Controller
      */
     public function destroy(unitkompetensisertifikasi $unitkompetensisertifikasi)
     {
-        //
+        unitkompetensisertifikasi::destroy($unitkompetensisertifikasi->id);
+        return redirect('/index/datauksertif')->with('status', 'data berhasil dihapus');
     }
 }

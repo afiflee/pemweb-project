@@ -90,7 +90,11 @@ Route::put('/datarku/{refkuesioner}', [rkucontroller::class, 'update']);
 
 //tabel unit_kompetensi_sertifikasi
 Route::get('/index/uksertif', [uksertifcontroller::class, 'create']);
+Route::get('/index/datauksertif', [uksertifcontroller::class, 'index']);
 Route::post('/index/uksertif', [uksertifcontroller::class, 'store']);
+Route::delete('/datauksertif/{unitkompetensisertifikasi}', [uksertifcontroller::class, 'destroy']);
+Route::get('/datauksertif/{unitkompetensisertifikasi}/edit', [uksertifcontroller::class, 'edit']);
+Route::put('/datauksertif/{unitkompetensisertifikasi}', [uksertifcontroller::class, 'update']);
 
 //tabel syarat_sertifikasi
 Route::get('/index/ss', [sscontroller::class, 'create']);
