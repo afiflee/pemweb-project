@@ -134,14 +134,6 @@
                         </tr>
                     </tbody>
                  </table>
-                
-                <!-- <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            ref_jenis_sertifikasi
-                            <a href="{{ url('/index/rjs') }}" class="badge mx-0">Tambah</a>
-                            <a href="{{ url('/index/datarjs') }}" class="badge mx-0">data</a>
-                        </li>
-                </ul> -->
             </div>
         </div>
     </div>

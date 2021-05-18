@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+                <h1 class="mt-3">Ubah Data</h1>
                 <form method="POST" action="/datarjs/{{$refjenissertifikasi->id}}">
                     @method('put')
                     @csrf
