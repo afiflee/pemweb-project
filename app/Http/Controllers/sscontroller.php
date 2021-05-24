@@ -20,7 +20,8 @@ class sscontroller extends Controller
      */
     public function index()
     {
-        //
+        $ss = syaratsertifikasi::all();
+        return view('read.ss', compact('ss'));
     }
 
     /**
@@ -70,7 +71,7 @@ class sscontroller extends Controller
      */
     public function edit(syaratsertifikasi $syaratsertifikasi)
     {
-        //
+        return view('edit.ss', compact('syaratsertifikasi'));
     }
 
     /**
@@ -82,7 +83,13 @@ class sscontroller extends Controller
      */
     public function update(Request $request, syaratsertifikasi $syaratsertifikasi)
     {
-        //
+        syaratsertifikasi::where('id', $syaratsertifikasi->id)
+            ->update([
+                'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
+                'syarat' => $request->syarat,
+                'is_aktif' => $request->is_aktif
+            ]);
+        return redirect('/index/datass')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -93,6 +100,7 @@ class sscontroller extends Controller
      */
     public function destroy(syaratsertifikasi $syaratsertifikasi)
     {
-        //
+        syaratsertifikasi::destroy($syaratsertifikasi->id);
+        return redirect('/index/datass')->with('status', 'data berhasil dihapus');
     }
 }

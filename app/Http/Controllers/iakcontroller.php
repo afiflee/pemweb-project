@@ -20,7 +20,8 @@ class iakcontroller extends Controller
      */
     public function index()
     {
-        //
+        $iak = instrumenasesmenkompetensi::all();
+        return view('read.iak', compact('iak'));
     }
 
     /**
@@ -71,7 +72,7 @@ class iakcontroller extends Controller
      */
     public function edit(instrumenasesmenkompetensi $instrumenasesmenkompetensi)
     {
-        //
+        return view('edit.iak', compact('instrumenasesmenkompetensi'));
     }
 
     /**
@@ -83,7 +84,14 @@ class iakcontroller extends Controller
      */
     public function update(Request $request, instrumenasesmenkompetensi $instrumenasesmenkompetensi)
     {
-        //
+        instrumenasesmenkompetensi::where('id', $instrumenasesmenkompetensi->id)
+        ->update([
+            'id_ref_unit_kompetensi' => $request->id_ref_unit_kompetensi,
+            'instrumen_pertanyaan	' => $request->instrumen_pertanyaan,
+            'status_instrumen' => $request->status_instrumen,
+            'is_aktif' => $request->is_aktif
+        ]);
+    return redirect('/index/dataiak')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -94,6 +102,7 @@ class iakcontroller extends Controller
      */
     public function destroy(instrumenasesmenkompetensi $instrumenasesmenkompetensi)
     {
-        //
+        instrumenasesmenkompetensi::destroy($instrumenasesmenkompetensi->id);
+        return redirect('/index/dataiak')->with('status', 'data berhasil dihapus');
     }
 }

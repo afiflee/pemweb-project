@@ -29,6 +29,7 @@
                         <input type="text" class="form-control" id="is_aktif" name="is_aktif" placeholder="true / false">
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    <a href="{{ url('/index/dataiak') }}" class="btn bg-warning my-3">Lihat Data</a>
                     <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
                 </form>
             </div>

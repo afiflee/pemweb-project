@@ -98,15 +98,29 @@ Route::put('/datauksertif/{unitkompetensisertifikasi}', [uksertifcontroller::cla
 
 //tabel syarat_sertifikasi
 Route::get('/index/ss', [sscontroller::class, 'create']);
+Route::get('/index/datass', [sscontroller::class, 'index']);
 Route::post('/index/ss', [sscontroller::class, 'store']);
+Route::delete('/datass/{syaratsertifikasi}', [sscontroller::class, 'destroy']);
+Route::get('/datass/{syaratsertifikasi}/edit', [sscontroller::class, 'edit']);
+Route::put('/datass/{syaratsertifikasi}', [sscontroller::class, 'update']);
+
 
 //tabel instrumen_asesmen_kompetensi
 Route::get('/index/iak', [iakcontroller::class, 'create']);
+Route::get('/index/dataiak', [iakcontroller::class, 'index']);
 Route::post('/index/iak', [iakcontroller::class, 'store']);
+Route::delete('/dataiak/{instrumenasesmenkompetensi}', [iakcontroller::class, 'destroy']);
+Route::get('/dataiak/{instrumenasesmenkompetensi}/edit', [iakcontroller::class, 'edit']);
+Route::put('/dataiak/{instrumenasesmenkompetensi}', [iakcontroller::class, 'update']);
+
 
 //tabel penawaran_sertifikasi
 Route::get('/index/ps', [pscontroller::class, 'create']);
+Route::get('/index/dataps', [pscontroller::class, 'index']);
 Route::post('/index/ps', [pscontroller::class, 'store']);
+Route::delete('/dataps/{penawaransertifikasi}', [pscontroller::class, 'destroy']);
+Route::get('/dataps/{penawaransertifikasi}/edit', [pscontroller::class, 'edit']);
+Route::put('/dataps/{penawaransertifikasi}', [pscontroller::class, 'update']);
 
 //tabel pendaftar
 Route::get('/index/p', [pcontroller::class, 'create']);

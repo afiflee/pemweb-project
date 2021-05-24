@@ -20,7 +20,8 @@ class pscontroller extends Controller
      */
     public function index()
     {
-        //
+        $ps = penawaransertifikasi::all();
+        return view('read.ps', compact('ps'));
     }
 
     /**
@@ -74,7 +75,7 @@ class pscontroller extends Controller
      */
     public function edit(penawaransertifikasi $penawaransertifikasi)
     {
-        //
+        return view('edit.ps', compact('penawaransertifikasi'));
     }
 
     /**
@@ -86,7 +87,18 @@ class pscontroller extends Controller
      */
     public function update(Request $request, penawaransertifikasi $penawaransertifikasi)
     {
-        //
+        penawaransertifikasi::where('id', $penawaransertifikasi->id)
+        ->update([
+            'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
+            'deskripsi_penawaran' => $request->	deskripsi_penawaran,
+            'periode' => $request->periode,
+            'created_by' => $request->created_by,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at,
+            'edited_by' => $request->edited_by,
+            'is_aktif' => $request->is_aktif
+        ]);
+    return redirect('/index/dataps')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -97,6 +109,7 @@ class pscontroller extends Controller
      */
     public function destroy(penawaransertifikasi $penawaransertifikasi)
     {
-        //
+        penawaransertifikasi::destroy($penawaransertifikasi->id);
+        return redirect('/index/dataps')->with('status', 'data berhasil dihapus');
     }
 }
