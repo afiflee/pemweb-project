@@ -29,10 +29,11 @@
                         <input type="date" class="form-control" id="tanggal_akhir_berlaku" name="tanggal_akhir_berlaku" placeholder="Tanggal akhir berlaku">
                     </div>
                     <div class="form-group my-3">
-                        <label for="nomor_sertifikat">nomor sertifikat</label>
-                        <input type="number" class="form-control" id="nomor_sertifikat" name="nomor_sertifikat" placeholder="nomor sertifikat">
+                        <label for="no_sertifikat">nomor sertifikat</label>
+                        <input type="number" class="form-control" id="no_sertifikat" name="no_sertifikat" placeholder="nomer sertifikat">
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    <a href="{{ url('/index/dataajs') }}" class="btn bg-warning my-3">Lihat Data</a>
 					<a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
 				</form>
             </div>

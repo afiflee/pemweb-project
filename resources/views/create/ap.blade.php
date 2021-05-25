@@ -25,6 +25,7 @@
                         <input type="text" class="form-control" id="hasil" name="hasil" placeholder="masukkan hasil">
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    <a href="{{ url('/index/dataap') }}" class="btn bg-warning my-3">Lihat Data</a>
 					<a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
 				</form>
             </div>

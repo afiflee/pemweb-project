@@ -20,7 +20,8 @@ class apcontroller extends Controller
      */
     public function index()
     {
-        //
+        $ap = asesorpendaftar::all();
+        return view('read.ap',compact('ap'));
     }
 
     /**
@@ -70,7 +71,7 @@ class apcontroller extends Controller
      */
     public function edit(asesorpendaftar $asesorpendaftar)
     {
-        //
+        return view('edit.ap',compact('asesorpendaftar'));
     }
 
     /**
@@ -82,7 +83,13 @@ class apcontroller extends Controller
      */
     public function update(Request $request, asesorpendaftar $asesorpendaftar)
     {
-        //
+        asesorpendaftar::where('id', $asesorpendaftar->id)
+            ->update([
+                'id_asesor_jenis_sertifikasi' => $request->id_asesor_jenis_sertifikasi,
+                'id_pendaftar' => $request->id_pendaftar,
+                'hasil' => $request->hasil
+            ]);
+        return redirect('/index/dataap')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -93,6 +100,7 @@ class apcontroller extends Controller
      */
     public function destroy(asesorpendaftar $asesorpendaftar)
     {
-        //
+        asesorpendaftar::destroy($asesorpendaftar->id);
+        return redirect('/index/dataap')->with('status','data berhasil dihapus');
     }
 }

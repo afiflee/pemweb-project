@@ -20,7 +20,8 @@ class pcontroller extends Controller
      */
     public function index()
     {
-        //
+        $pendaftar = pendaftar::all();
+        return view('read.p', compact('pendaftar'));
     }
 
     /**
@@ -75,7 +76,7 @@ class pcontroller extends Controller
      */
     public function edit(pendaftar $pendaftar)
     {
-        //
+        return view('edit.p', compact('pendaftar'));
     }
 
     /**
@@ -87,7 +88,17 @@ class pcontroller extends Controller
      */
     public function update(Request $request, pendaftar $pendaftar)
     {
-        //
+        pendaftar::where('id', $pendaftar->id)
+            ->update([
+                'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
+                'id_asesi' => $request->id_asesi,
+                'status_akhir_sertifikasi' => $request->status_akhir_sertifikasi,
+                'tanggal_status_akhir' => $request->tanggal_status_akhir,
+                'created_by' => $request->created_by,
+                'edited_by' => $request->edited_by,
+                'status_pendaftaran' => $request->status_pendaftaran
+            ]);
+        return redirect('/index/datap')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -98,6 +109,7 @@ class pcontroller extends Controller
      */
     public function destroy(pendaftar $pendaftar)
     {
-        //
+        pendaftar::destroy($pendaftar->id);
+        return redirect('/index/datap')->with('status', 'data berhasil dihapus');
     }
 }

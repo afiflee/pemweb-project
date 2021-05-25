@@ -93,8 +93,8 @@
                         <tr>
                             <td class="fs-5">pendaftar_syarat</td>
                             <td>
-                            <a href="{{ url('/index/ps') }}" class="badge bg-primary">Tambah</a>
-                            <a href="{{ url('/index/dataps') }}" class="badge bg-success">list</a>
+                            <a href="{{ url('/index/psy') }}" class="badge bg-primary">Tambah</a>
+                            <a href="{{ url('/index/datapsy') }}" class="badge bg-success">list</a>
                             </td>
                         </tr>
                         <tr>

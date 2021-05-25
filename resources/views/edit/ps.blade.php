@@ -10,7 +10,7 @@
                     @method('put')
                     <div class="form-group my-3">
                         <label for="id_ref_jenis_sertifikasi">id ref jenis sertifikasi</label>
-                        <input type="number" class="form-control" id="id_ref_jenis_sertifikasi" name="id_ref_unit_kompetensi" placeholder="id ref jenis sertifikasi" value="{{ $penawaransertifikasi ->  id_ref_jenis_sertifikasi}}">
+                        <input type="number" class="form-control" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi" placeholder="id ref jenis sertifikasi" value="{{ $penawaransertifikasi ->  id_ref_jenis_sertifikasi}}">
                     </div>
                     <div class="form-group my-3">
                         <label for="deskripsi_penawaran">deskripsi penawaran</label>

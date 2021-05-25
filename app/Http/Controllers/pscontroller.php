@@ -90,11 +90,11 @@ class pscontroller extends Controller
         penawaransertifikasi::where('id', $penawaransertifikasi->id)
         ->update([
             'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
-            'deskripsi_penawaran' => $request->	deskripsi_penawaran,
+            'deskripsi_penawaran' => $request->deskripsi_penawaran,
             'periode' => $request->periode,
             'created_by' => $request->created_by,
-            'created_at' => $request->created_at,
-            'updated_at' => $request->updated_at,
+            //'created_at' => $request->created_at,
+            //'updated_at' => $request->updated_at,
             'edited_by' => $request->edited_by,
             'is_aktif' => $request->is_aktif
         ]);

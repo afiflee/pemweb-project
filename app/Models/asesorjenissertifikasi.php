@@ -9,6 +9,6 @@ class asesorjenissertifikasi extends Model
 {
     public $timestamps = false;
     protected $table = 'asesor_jenis_sertifikasi';
-    protected $fillable = ['id_asesor', 'id_ref_jenis_sertifikasi', 'tanggal_awal_berlaku', 'tanggal_akhir_berlaku', 'nomor_sertifikat'];
+    protected $fillable = ['id_asesor', 'id_ref_jenis_sertifikasi', 'tanggal_awal_berlaku', 'tanggal_akhir_berlaku', 'no_sertifikat'];
     use HasFactory;
 }

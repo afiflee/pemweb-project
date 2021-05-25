@@ -20,7 +20,8 @@ class picontroller extends Controller
      */
     public function index()
     {
-        //
+        $pendaftarinstrumen = pendaftarinstrumen::all();
+        return view('read.pi', compact('pendaftarinstrumen'));
     }
 
     /**
@@ -78,7 +79,7 @@ class picontroller extends Controller
      */
     public function edit(pendaftarinstrumen $pendaftarinstrumen)
     {
-        //
+        return view('edit.pi', compact('pendaftarinstrumen'));
     }
 
     /**
@@ -90,7 +91,20 @@ class picontroller extends Controller
      */
     public function update(Request $request, pendaftarinstrumen $pendaftarinstrumen)
     {
-        //
+        pendaftarinstrumen::where('id', $pendaftarinstrumen->id)
+            ->update([
+                'id_pendaftar' => $request->id_pendaftar,
+                'id_instrumen_asesmen' => $request->id_instrumen_asesmen,
+                'jawaban_self_asesmen' => $request->jawaban_self_asesmen,
+                'path_bukti' => $request->path_bukti,
+                'komentar_bukti' => $request->komentar_bukti,
+                'jawaban_asesor_sertifikasi' => $request->jawaban_asesor_sertifikasi,
+                'verified_by' => $request->verified_by,
+                'verified_at' => $request->verified_at,
+                'created_by' => $request->created_by,
+                'edited_by' => $request->edited_by
+            ]);
+        return redirect('/index/datapi')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -101,6 +115,7 @@ class picontroller extends Controller
      */
     public function destroy(pendaftarinstrumen $pendaftarinstrumen)
     {
-        //
+        pendaftarinstrumen::destroy($pendaftarinstrumen->id);
+        return redirect('/index/datapi')->with('status', 'data berhasil dihapus');
     }
 }

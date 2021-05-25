@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\pendaftarsyarat;
 use App\Http\Controllers\Controller;
-use App\Models\pendaftar;
 use Illuminate\Http\Request;
 
 class psycontroller extends Controller
@@ -21,7 +20,8 @@ class psycontroller extends Controller
      */
     public function index()
     {
-        //
+        $pendaftarsyarat = pendaftarsyarat::all();
+        return view('read.psy', compact('pendaftarsyarat'));
     }
 
     /**
@@ -79,7 +79,7 @@ class psycontroller extends Controller
      */
     public function edit(pendaftarsyarat $pendaftarsyarat)
     {
-        //
+        return view('edit.psy', compact('pendaftarsyarat'));
     }
 
     /**
@@ -91,7 +91,20 @@ class psycontroller extends Controller
      */
     public function update(Request $request, pendaftarsyarat $pendaftarsyarat)
     {
-        //
+        pendaftarsyarat::where('id', $pendaftarsyarat->id)
+            ->update([
+                'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
+                'id_pendaftar' => $request->id_pendaftar,
+                'status_verifikasi_syarat' => $request->status_verifikasi_syarat,
+                'path_bukti' => $request->path_bukti,
+                'verifikasi_asesor' => $request->verifikasi_asesor,
+                'komentar_asesor' => $request->komentar_asesor,
+                'verified_by' => $request->verified_by,
+                'verified_at' => $request->verified_at,
+                'created_by' => $request->created_by,
+                'edited_by' => $request->edited_by
+            ]);
+            return redirect('/index/datapsy')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -102,6 +115,7 @@ class psycontroller extends Controller
      */
     public function destroy(pendaftarsyarat $pendaftarsyarat)
     {
-        //
+        pendaftarsyarat::destroy($pendaftarsyarat->id);
+        return redirect('/index/datapsy')->with('status', 'data berhasil dihapus');
     }
 }

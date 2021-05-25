@@ -21,8 +21,8 @@ class ajscontroller extends Controller
      */
     public function index()
     {
-        $asesorjenissertifikasi = asesorjenissertifikasi::all();
-        return view('read.ajs', compact('asesorjenissertifikasi'));
+        $ajs = asesorjenissertifikasi::all();
+        return view('read.ajs', compact('ajs'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ajscontroller extends Controller
 		// $ajs->id_ref_jenis_sertifikasi = $request->id_ref_jenis_sertifikasi;
 		// $ajs->tanggal_awal_berlaku = $request->tanggal_awal_berlaku;
 		// $ajs->tanggal_akhir_berlaku = $request->tanggal_akhir_berlaku;
-		// $ajs->nomor_sertifikat = $request->nomor_sertifikat;
+		// $ajs->no_sertifikat = $request->no_sertifikat;
 
         asesorjenissertifikasi::create($request->all());
 
@@ -86,7 +86,15 @@ class ajscontroller extends Controller
      */
     public function update(Request $request, asesorjenissertifikasi $asesorjenissertifikasi)
     {
-        //
+             asesorjenissertifikasi::where('id', $asesorjenissertifikasi->id)
+            ->update([
+                'id_asesor' => $request->id_asesor,
+                'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
+                'tanggal_awal_berlaku' => $request->tanggal_awal_berlaku,
+                'tanggal_akhir_berlaku' => $request->tanggal_akhir_berlaku,
+                'no_sertifikat' => $request->no_sertifikat
+            ]);
+        return redirect('/index/dataajs')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -97,6 +105,7 @@ class ajscontroller extends Controller
      */
     public function destroy(asesorjenissertifikasi $asesorjenissertifikasi)
     {
-        //
+        asesorjenissertifikasi::destroy($asesorjenissertifikasi->id);
+        return redirect('/index/dataajs')->with('status', 'data berhasil dihapus');
     }
 }

@@ -124,23 +124,43 @@ Route::put('/dataps/{penawaransertifikasi}', [pscontroller::class, 'update']);
 
 //tabel pendaftar
 Route::get('/index/p', [pcontroller::class, 'create']);
+Route::get('/index/datap', [pcontroller::class, 'index']);
 Route::post('/index/p', [pcontroller::class, 'store']);
+Route::delete('/datap/{pendaftar}', [uksertifcontroller::class, 'destroy']);
+Route::get('/datap/{pendaftar}/edit', [uksertifcontroller::class, 'edit']);
+Route::put('/datap/{pendaftar}', [uksertifcontroller::class, 'update']);
 
 //tabel pendaftar_syarat
 Route::get('/index/psy', [psycontroller::class, 'create']);
+Route::get('/index/datapsy', [psycontroller::class, 'index']);
 Route::post('/index/psy', [psycontroller::class, 'store']);
+Route::delete('/datapsy/{pendaftarsyarat}', [psycontroller::class, 'destroy']);
+Route::get('/datapsy/{pendaftarsyarat}/edit', [psycontroller::class, 'edit']);
+Route::put('/datapsy/{pendaftarsyarat}', [psycontroller::class, 'update']);
 
 //tabel pendaftar_instrumen
 Route::get('/index/pi', [picontroller::class, 'create']);
+Route::get('/index/datapi', [picontroller::class, 'index']);
 Route::post('/index/pi', [picontroller::class, 'store']);
+Route::delete('/datapi/{pendaftarinstrumen}', [picontroller::class, 'destroy']);
+Route::get('/datapi/{pendaftarinstrumen}/edit', [picontroller::class, 'edit']);
+Route::put('/datapi/{pendaftarinstrumen}', [picontroller::class, 'update']);
 
 //tabel asesor_jenis_sertifikat
 Route::get('/index/ajs', [ajscontroller::class, 'create']);
+Route::get('/index/dataajs', [ajscontroller::class, 'index']);
 Route::post('/index/ajs', [ajscontroller::class, 'store']);
+Route::delete('/dataajs/{asesorjenissertifikasi}', [ajscontroller::class, 'destroy']);
+Route::get('/dataajs/{asesorjenissertifikasi}/edit', [ajscontroller::class, 'edit']);
+Route::put('/dataajs/{asesorjenissertifikasi}', [ajscontroller::class, 'update']);
 
 //tabel asesor_pendaftar
 Route::get('/index/ap', [apcontroller::class, 'create']);
+Route::get('/index/dataap', [apcontroller::class, 'index']);
 Route::post('/index/ap', [apcontroller::class, 'store']);
+Route::delete('/dataap/{asesorpendaftar}', [apcontroller::class, 'destroy']);
+Route::get('/dataap/{asesorpendaftar}/edit', [apcontroller::class, 'edit']);
+Route::put('/dataap/{asesorpendaftar}', [apcontroller::class, 'update']);
 
 //tabel jadwal
 Route::get('/index/jadwal', [jadwalcontroller::class, 'create']);
