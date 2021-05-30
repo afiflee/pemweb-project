@@ -164,8 +164,16 @@ Route::put('/dataap/{asesorpendaftar}', [apcontroller::class, 'update']);
 
 //tabel jadwal
 Route::get('/index/jadwal', [jadwalcontroller::class, 'create']);
+Route::get('/index/datajadwal', [jadwalcontroller::class, 'index']);
 Route::post('/index/jadwal', [jadwalcontroller::class, 'store']);
+Route::delete('/datajadwal/{jadwal}', [jadwalcontroller::class, 'destroy']);
+Route::get('/datajadwal/{jadwal}/edit', [jadwalcontroller::class, 'edit']);
+Route::put('/datajadwal/{jadwal}', [jadwalcontroller::class, 'update']);
 
 //tabel pendaftar_kuesioner
 Route::get('/index/pk', [pkcontroller::class, 'create']);
+Route::get('/index/datapk', [pkcontroller::class, 'index']);
 Route::post('/index/pk', [pkcontroller::class, 'store']);
+Route::delete('/datapk/{pendaftarkuesioner}', [pkcontroller::class, 'destroy']);
+Route::get('/datapk/{pendaftarkuesioner}/edit', [pkcontroller::class, 'edit']);
+Route::put('/datapk/{pendaftarkuesioner}', [pkcontroller::class, 'update']);

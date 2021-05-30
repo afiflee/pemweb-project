@@ -20,7 +20,8 @@ class jadwalcontroller extends Controller
      */
     public function index()
     {
-        //
+        $jadwal = jadwal::all();
+        return view('read.jadwal', compact('jadwal'));
     }
 
     /**
@@ -75,7 +76,7 @@ class jadwalcontroller extends Controller
      */
     public function edit(jadwal $jadwal)
     {
-        //
+        return view('edit.jadwal', compact('jadwal'));
     }
 
     /**
@@ -87,7 +88,17 @@ class jadwalcontroller extends Controller
      */
     public function update(Request $request, jadwal $jadwal)
     {
-        //
+        jadwal::where('id', $jadwal->id)
+            ->update([
+                'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
+                'id_kegiatan' => $request->id_kegiatan,
+                'tanggal_awal' => $request->tanggal_awal,
+                'tanggal_akhir' => $request->tanggal_akhir,
+                'created_by' => $request->created_by,
+                'is_show' => $request->is_show,
+                'deskripsi' => $request->deskripsi
+            ]);
+        return redirect('/index/datajadwal')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -98,6 +109,7 @@ class jadwalcontroller extends Controller
      */
     public function destroy(jadwal $jadwal)
     {
-        //
+        jadwal::destroy($jadwal->id);
+        return redirect('/index/datajadwal')->with('status', 'data berhasil dihapus');
     }
 }

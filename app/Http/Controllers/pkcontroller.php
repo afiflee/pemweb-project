@@ -20,7 +20,8 @@ class pkcontroller extends Controller
      */
     public function index()
     {
-        //
+        $pendaftarkuesioner = pendaftarkuesioner::all();
+        return view('read.pk', compact('pendaftarkuesioner'));
     }
 
     /**
@@ -73,7 +74,7 @@ class pkcontroller extends Controller
      */
     public function edit(pendaftarkuesioner $pendaftarkuesioner)
     {
-        //
+        return view('edit.pk', compact('pendaftarkuesioner'));
     }
 
     /**
@@ -85,7 +86,15 @@ class pkcontroller extends Controller
      */
     public function update(Request $request, pendaftarkuesioner $pendaftarkuesioner)
     {
-        //
+        pendaftarkuesioner::where('id', $pendaftarkuesioner->id)
+            ->update([
+                'id_pendaftar' => $request->id_pendaftar,
+                'id_kuesioner' => $request->id_kuesioner,
+                'jawaban' => $request->jawaban,
+                'created_by' => $request->created_by,
+                'edited_by' => $request->edited_by
+            ]);
+        return redirect('/index/datapk')->with('status', 'data berhasil diubah');
     }
 
     /**
@@ -96,6 +105,7 @@ class pkcontroller extends Controller
      */
     public function destroy(pendaftarkuesioner $pendaftarkuesioner)
     {
-        //
+        pendaftarkuesioner::destroy($pendaftarkuesioner->id);
+        return redirect('/index/datapk')->with('status', 'data berhasil dihapus');
     }
 }

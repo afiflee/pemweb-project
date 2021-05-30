@@ -33,6 +33,7 @@
                         <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    <a href="{{ url('/index/datapk') }}" class="btn bg-warning my-3">Lihat Data</a>
 					<a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
 				</form>
             </div>
