@@ -60,7 +60,7 @@
                         <label for="id_unit">nomor unit</label>
                         <input type="number" class="form-control" id="id_unit" name="id_unit" placeholder="nomor unit">
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
                     </div>
@@ -71,7 +71,7 @@
                     <div class="form-group my-3">
                         <label for="id_user">user id</label>
                         <input type="number" class="form-control" id="id_user" name="id_user" placeholder="user id">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/dataasesi') }}" class="btn bg-warning my-3">Lihat Data</a>
                     <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>

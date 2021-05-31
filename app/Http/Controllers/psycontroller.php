@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pendaftarsyarat;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class psycontroller extends Controller
 {
@@ -55,7 +56,18 @@ class psycontroller extends Controller
 		// $psy->edited_by = $request->edited_by;
         // $psy->save();
 
-        pendaftarsyarat::create($request->all());
+        pendaftarsyarat::create([
+                'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
+                'id_pendaftar' => $request->id_pendaftar,
+                'status_verifikasi_syarat' => $request->status_verifikasi_syarat,
+                'path_bukti' => $request->path_bukti,
+                'verifikasi_asesor' => $request->verifikasi_asesor,
+                'komentar_asesor' => $request->komentar_asesor,
+                'verified_by' => $request->verified_by,
+                'verified_at' => $request->verified_at,
+                'created_by' => Auth::user()->name,
+                'edited_by' => Auth::user()->name
+            ]);
 
 		return redirect('/index/psy')->with('status', 'data berhasil masuk');
     }
@@ -101,8 +113,7 @@ class psycontroller extends Controller
                 'komentar_asesor' => $request->komentar_asesor,
                 'verified_by' => $request->verified_by,
                 'verified_at' => $request->verified_at,
-                'created_by' => $request->created_by,
-                'edited_by' => $request->edited_by
+                'edited_by' => Auth::user()->name
             ]);
             return redirect('/index/datapsy')->with('status', 'data berhasil diubah');
     }

@@ -14,12 +14,12 @@
                     </div>
                     <div class="form-group my-3">
                         <label for="deskripsi">deskripsi</label>
-                        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kegiatan" value="{{$refkegiatan->deskripsi}}"></textarea>
+                        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kegiatan">{{$refkegiatan->deskripsi}}</textarea>
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda" value="{{$refkegiatan->created_by}}">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
                 </form>
             </div>

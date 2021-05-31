@@ -20,14 +20,14 @@
                         <label for="status_jenis_sertifikasi">Status Sertifikasi</label>
                         <input type="text" class="form-control" id="status_jenis_sertifikasi" name="status_jenis_sertifikasi" placeholder="Masukkan Status">
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
                     </div>
                     <div class="form-group my-3">
                         <label for="edited_by">Editor</label>
                         <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Masukkan Nama Anda">
-                    </div>
+                    </div> -->
                     <div class="form-group my-3">
                         <label for="is_aktif">Aktif</label>
                         <input type="text" class="form-control" id="is_aktif" name="is_aktif" placeholder="true / false">

@@ -25,14 +25,6 @@
                         <input type="date" class="form-control" id="tanggal_status_akhir" name="tanggal_status_akhir" placeholder="Tanggal status akhir" value="{{$pendaftar->tanggal_status_akhir}}"> 
                     </div>
                     <div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda" value="{{$pendaftar->created_by}}">
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="edited_by">Editor</label>
-                        <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi" value="{{$pendaftar->edited)by}}">
-                    </div>
-                    <div class="form-group my-3">
                         <label for="status_pendaftaran">status pendaftaran</label>
                         <input type="text" class="form-control" id="status_pendaftaran" name="status_pendaftaran" placeholder="status pendaftaran" value="{{$pendaftar->status_pendaftaran}}">
                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pendaftarkuesioner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class pkcontroller extends Controller
 {
@@ -50,7 +51,13 @@ class pkcontroller extends Controller
 		// $pk->edited_by = $request->edited_by;
         // $pk->save();
 
-        pendaftarkuesioner::create($request->all());
+        pendaftarkuesioner::create([
+                'id_pendaftar' => $request->id_pendaftar,
+                'id_kuesioner' => $request->id_kuesioner,
+                'jawaban' => $request->jawaban,
+                'created_by' => Auth::user()->name,
+                'edited_by' => Auth::user()->name
+            ]);
 
 		return redirect('/index/pk')->with('status', 'data berhasil masuk');
     }
@@ -91,8 +98,7 @@ class pkcontroller extends Controller
                 'id_pendaftar' => $request->id_pendaftar,
                 'id_kuesioner' => $request->id_kuesioner,
                 'jawaban' => $request->jawaban,
-                'created_by' => $request->created_by,
-                'edited_by' => $request->edited_by
+                'edited_by' => Auth::user()->name
             ]);
         return redirect('/index/datapk')->with('status', 'data berhasil diubah');
     }

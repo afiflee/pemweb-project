@@ -20,14 +20,6 @@
                         <label for="jawaban">jawaban</label>
                         <textarea type="text" class="form-control" id="jawaban" name="jawaban" placeholder="Masukkan jawaban kuesioner">{{$pendaftarkuesioner->jawaban}}</textarea>
                     </div>
-					<div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda" value="{{$pendaftarkuesioner->created_by}}">
-                    </div>
-					<div class="form-group my-3">
-                        <label for="edited_by">Editor</label>
-                        <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi" value="{{$pendaftarkuesioner->edited_by}}">
-                    </div>
                     <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
 				</form>
             </div>

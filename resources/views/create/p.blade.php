@@ -28,14 +28,14 @@
                         <label for="tanggal_status_akhir">Tanggal status akhir</label>
                         <input type="date" class="form-control" id="tanggal_status_akhir" name="tanggal_status_akhir" placeholder="Tanggal status akhir">
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
                     </div>
                     <div class="form-group my-3">
                         <label for="edited_by">Editor</label>
                         <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
-                    </div>
+                    </div> -->
                     <div class="form-group my-3">
                         <label for="status_pendaftaran">status pendaftaran</label>
                         <input type="text" class="form-control" id="status_pendaftaran" name="status_pendaftaran" placeholder="status pendaftaran">

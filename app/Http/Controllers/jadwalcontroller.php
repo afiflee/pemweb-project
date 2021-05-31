@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\jadwal;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class jadwalcontroller extends Controller
 {
@@ -52,7 +53,15 @@ class jadwalcontroller extends Controller
 		// $jadwal->deskripsi = $request->deskripsi;
         // $jadwal->save();
 
-        jadwal::create($request->all());
+        jadwal::create([
+                'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
+                'id_kegiatan' => $request->id_kegiatan,
+                'tanggal_awal' => $request->tanggal_awal,
+                'tanggal_akhir' => $request->tanggal_akhir,
+                'created_by' => Auth::user()->name,
+                'is_show' => $request->is_show,
+                'deskripsi' => $request->deskripsi
+            ]);
 
 		return redirect('/index/jadwal')->with('status', 'data berhasil masuk');
     }
@@ -94,7 +103,6 @@ class jadwalcontroller extends Controller
                 'id_kegiatan' => $request->id_kegiatan,
                 'tanggal_awal' => $request->tanggal_awal,
                 'tanggal_akhir' => $request->tanggal_akhir,
-                'created_by' => $request->created_by,
                 'is_show' => $request->is_show,
                 'deskripsi' => $request->deskripsi
             ]);

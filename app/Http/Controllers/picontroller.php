@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pendaftarinstrumen;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class picontroller extends Controller
 {
@@ -55,7 +56,18 @@ class picontroller extends Controller
 		// $pi->edited_by = $request->edited_by;
         // $pi->save();
 
-        pendaftarinstrumen::create($request->all());
+        pendaftarinstrumen::create([
+                'id_pendaftar' => $request->id_pendaftar,
+                'id_instrumen_asesmen' => $request->id_instrumen_asesmen,
+                'jawaban_self_asesmen' => $request->jawaban_self_asesmen,
+                'path_bukti' => $request->path_bukti,
+                'komentar_bukti' => $request->komentar_bukti,
+                'jawaban_asesor_verifikasi' => $request->jawaban_asesor_verifikasi,
+                'verified_by' => $request->verified_by,
+                'verified_at' => $request->verified_at,
+                'created_by' => Auth::user()->name,
+                'edited_by' => Auth::user()->name
+            ]);
 
 		return redirect('/index/pi')->with('status', 'data berhasil masuk');
     }
@@ -98,11 +110,10 @@ class picontroller extends Controller
                 'jawaban_self_asesmen' => $request->jawaban_self_asesmen,
                 'path_bukti' => $request->path_bukti,
                 'komentar_bukti' => $request->komentar_bukti,
-                'jawaban_asesor_sertifikasi' => $request->jawaban_asesor_sertifikasi,
+                'jawaban_asesor_verifikasi' => $request->jawaban_asesor_verifikasi,
                 'verified_by' => $request->verified_by,
                 'verified_at' => $request->verified_at,
-                'created_by' => $request->created_by,
-                'edited_by' => $request->edited_by
+                'edited_by' => Auth::user()->name
             ]);
         return redirect('/index/datapi')->with('status', 'data berhasil diubah');
     }

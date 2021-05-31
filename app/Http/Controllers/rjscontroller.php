@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\refjenissertifikasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class rjscontroller extends Controller
 {
@@ -50,15 +51,15 @@ class rjscontroller extends Controller
         // $refjenissertif->is_aktif = $request->is_aktif;
         // $refjenissertif->save();
 
-        // refjenissertifikasi::create([
-        //     'nama' => $request->nama,
-        //     'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
-        //     'created_by' => $request->created_by,
-        //     'edited_by' => $request->edited_by,
-        //     'is_aktif' => $request->is_aktif
-        // ]);
+        refjenissertifikasi::create([
+            'nama' => $request->nama,
+            'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
+            'created_by' => Auth::user()->name,
+            'edited_by' => Auth::user()->name,
+            'is_aktif' => $request->is_aktif
+        ]);
         
-        refjenissertifikasi::create($request->all());
+        // refjenissertifikasi::create($request->all());
 
         return redirect('/index/rjs')->with('status', 'data berhasil masuk');
     }
@@ -98,8 +99,7 @@ class rjscontroller extends Controller
             ->update([
                 'nama' => $request->nama,
                 'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
-                'created_by' => $request->created_by,
-                'edited_by' => $request->edited_by,
+                'edited_by' => Auth::user()->name,
                 'is_aktif' => $request->is_aktif
             ]);
         return redirect('/index/datarjs')->with('status', 'data berhasil diubah');

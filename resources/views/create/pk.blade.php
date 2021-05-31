@@ -24,14 +24,6 @@
                         <label for="jawaban">jawaban</label>
                         <textarea type="text" class="form-control" id="jawaban" name="jawaban" placeholder="Masukkan jawaban kuesioner"></textarea>
                     </div>
-					<div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
-                    </div>
-					<div class="form-group my-3">
-                        <label for="edited_by">Editor</label>
-                        <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
-                    </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/datapk') }}" class="btn bg-warning my-3">Lihat Data</a>
 					<a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>

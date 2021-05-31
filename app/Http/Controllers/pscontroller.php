@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\penawaransertifikasi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class pscontroller extends Controller
 {
@@ -51,7 +52,14 @@ class pscontroller extends Controller
 		// $ps->is_aktif = $request->is_aktif;
         // $ps->save();
 
-        penawaransertifikasi::create($request->all());
+        penawaransertifikasi::create([
+            'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
+            'deskripsi_penawaran' => $request->deskripsi_penawaran,
+            'periode' => $request->periode,
+            'created_by' => Auth::user()->name,
+            'edited_by' => Auth::user()->name,
+            'is_aktif' => $request->is_aktif
+        ]);
 
 		return redirect('/index/ps')->with('status', 'data berhasil masuk');
     }
@@ -92,10 +100,7 @@ class pscontroller extends Controller
             'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
             'deskripsi_penawaran' => $request->deskripsi_penawaran,
             'periode' => $request->periode,
-            'created_by' => $request->created_by,
-            //'created_at' => $request->created_at,
-            //'updated_at' => $request->updated_at,
-            'edited_by' => $request->edited_by,
+            'edited_by' => Auth::user()->name,
             'is_aktif' => $request->is_aktif
         ]);
     return redirect('/index/dataps')->with('status', 'data berhasil diubah');

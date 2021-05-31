@@ -24,14 +24,14 @@
                         <label for="periode">periode</label>
                         <input type="number" class="form-control" id="periode" name="periode" placeholder="masukkan periode" pattern="[0-9]{4}">
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
                     </div>
                     <div class="form-group my-3">
                         <label for="edited_by">Editor</label>
                         <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
-                    </div>
+                    </div> -->
                     <div class="form-group my-3">
                         <label for="is_aktif">Aktif</label>
                         <input type="text" class="form-control" id="is_aktif" name="is_aktif" placeholder="true / false">

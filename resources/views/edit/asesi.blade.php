@@ -56,7 +56,7 @@
                         <label for="id_unit">nomor unit</label>
                         <input type="number" class="form-control" id="id_unit" name="id_unit" placeholder="nomor unit" value="{{$asesi->id_unit}}">
                     </div>
-                    <div class="form-group my-3">
+                    <!-- <div class="form-group my-3">
                         <label for="created_by">Creator</label>
                         <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda" value="{{$asesi->created_by}}">
                     </div>
@@ -67,7 +67,7 @@
                     <div class="form-group my-3">
                         <label for="id_user">user id</label>
                         <input type="number" class="form-control" id="id_user" name="id_user" placeholder="user id" value="{{$asesi->id_user}}">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn bg-primary my-3">ubah Data</button>
                 </form>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pendaftar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class pcontroller extends Controller
 {
@@ -42,17 +43,15 @@ class pcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $p = new pendaftar;
-		// $p->id_penawaran_sertifikasi = $request->id_penawaran_sertifikasi;
-		// $p->id_asesi = $request->id_asesi;
-		// $p->status_akhir_sertifikasi = $request->status_akhir_sertifikasi;
-		// $p->tanggal_status_akhir = $request->tanggal_status_akhir;
-		// $p->created_by = $request->created_by;
-		// $p->edited_by = $request->edited_by;
-		// $p->status_pendaftaran = $request->status_pendaftaran;
-        // $p->save();
-
-        pendaftar::create($request->all());
+        pendaftar::create([
+                'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
+                'id_asesi' => $request->id_asesi,
+                'status_akhir_sertifikasi' => $request->status_akhir_sertifikasi,
+                'tanggal_status_akhir' => $request->tanggal_status_akhir,
+                'created_by' => Auth::user()->name,
+                'edited_by' => Auth::user()->name,
+                'status_pendaftaran' => $request->status_pendaftaran
+            ]);
 
 		return redirect('/index/p')->with('status', 'data berhasil masuk');
     }
@@ -94,8 +93,7 @@ class pcontroller extends Controller
                 'id_asesi' => $request->id_asesi,
                 'status_akhir_sertifikasi' => $request->status_akhir_sertifikasi,
                 'tanggal_status_akhir' => $request->tanggal_status_akhir,
-                'created_by' => $request->created_by,
-                'edited_by' => $request->edited_by,
+                'edited_by' => Auth::user()->name,
                 'status_pendaftaran' => $request->status_pendaftaran
             ]);
         return redirect('/index/datap')->with('status', 'data berhasil diubah');

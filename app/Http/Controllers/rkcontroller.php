@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\refkegiatan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class rkcontroller extends Controller
 {
@@ -48,7 +49,11 @@ class rkcontroller extends Controller
         // $rk->created_by = $request->created_by;
         // $rk->save();
 
-        refkegiatan::create($request->all());
+        refkegiatan::create([
+                'nama_kegiatan' => $request->nama_kegiatan,
+                'deskripsi' => $request->deskripsi,
+                'created_by' => Auth::user()->name
+            ]);
 
 	    return redirect('/index/rk')->with('status', 'data berhasil masuk');
     }
@@ -88,7 +93,6 @@ class rkcontroller extends Controller
             ->update([
                 'nama_kegiatan' => $request->nama_kegiatan,
                 'deskripsi' => $request->deskripsi,
-                'created_by' => $request->created_by
             ]);
         return redirect('/index/datark')->with('status', 'data berhasil diubah');
     }

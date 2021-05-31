@@ -25,10 +25,6 @@
                         <input type="date" class="form-control" id="tanggal_akhir" name="tanggal_akhir" placeholder="Tanggal akhir" value="{{$jadwal->tanggal_akhir}}">
                     </div>
                     <div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda" value="{{$jadwal->created_by}}">
-                    </div>
-                    <div class="form-group my-3">
                         <label for="is_show">show</label>
                         <input type="text" class="form-control" id="is_show" name="is_show" placeholder="true / false" value="{{$jadwal->is_show}}">
                     </div>

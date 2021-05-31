@@ -126,9 +126,9 @@ Route::put('/dataps/{penawaransertifikasi}', [pscontroller::class, 'update']);
 Route::get('/index/p', [pcontroller::class, 'create']);
 Route::get('/index/datap', [pcontroller::class, 'index']);
 Route::post('/index/p', [pcontroller::class, 'store']);
-Route::delete('/datap/{pendaftar}', [uksertifcontroller::class, 'destroy']);
-Route::get('/datap/{pendaftar}/edit', [uksertifcontroller::class, 'edit']);
-Route::put('/datap/{pendaftar}', [uksertifcontroller::class, 'update']);
+Route::delete('/datap/{pendaftar}', [pcontroller::class, 'destroy']);
+Route::get('/datap/{pendaftar}/edit', [pcontroller::class, 'edit']);
+Route::put('/datap/{pendaftar}', [pcontroller::class, 'update']);
 
 //tabel pendaftar_syarat
 Route::get('/index/psy', [psycontroller::class, 'create']);

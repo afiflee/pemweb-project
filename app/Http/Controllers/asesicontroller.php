@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\asesi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class asesicontroller extends Controller
 {
@@ -60,7 +61,23 @@ class asesicontroller extends Controller
         // $asesi->id_user = $request->id_user;
         // $asesi->save();
 
-        asesi::create($request->all());
+        asesi::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'nik' => $request->nik,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'id_ref_negara' => $request->id_ref_negara,
+            'alamat' => $request->alamat,
+            'no_telpon' => $request->no_telpon,
+            'email' => $request->email,
+            'kualifikasi_pendidikan' => $request->kualifikasi_pendidikan,
+            'id_unit' => $request->id_unit,
+            'created_by' => Auth::user()->name,
+            'edited_by' => Auth::user()->name,
+            'id_user' => Auth::user()->id
+        ]);
 
         return redirect('/index/asesi')->with('status', 'data berhasil masuk');
     }
@@ -104,14 +121,14 @@ class asesicontroller extends Controller
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
+            'id_ref_negara' => $request->id_ref_negara,
             'alamat' => $request->alamat,
             'no_telpon' => $request->no_telpon,
             'email' => $request->email,
             'kualifikasi_pendidikan' => $request->kualifikasi_pendidikan,
             'id_unit' => $request->id_unit,
-            'created_by' => $request->created_by,
-            'edited_by' => $request->edited_by,
-            'id_user' => $request->id_user
+            'edited_by' => Auth::user()->name,
+            'id_user' => Auth::user()->id
         ]);
     return redirect('/index/dataasesi')->with('status', 'data berhasil diubah');
     }
