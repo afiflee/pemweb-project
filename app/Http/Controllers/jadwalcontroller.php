@@ -43,15 +43,14 @@ class jadwalcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $jadwal = new jadwal;
-		// $jadwal->id_penawaran_sertifikasi = $request->id_penawaran_sertifikasi;
-		// $jadwal->id_kegiatan = $request->id_kegiatan;
-		// $jadwal->tanggal_awal = $request->tanggal_awal;
-		// $jadwal->tanggal_akhir = $request->tanggal_akhir;
-		// $jadwal->created_by = $request->created_by;
-		// $jadwal->is_show = $request->is_show;
-		// $jadwal->deskripsi = $request->deskripsi;
-        // $jadwal->save();
+        $request->validate([
+                'id_penawaran_sertifikasi' => 'required',
+                'id_kegiatan' => 'required',
+                'tanggal_awal' => 'required',
+                'tanggal_akhir' => 'required',
+                'is_show' => 'required',
+                'deskripsi' => 'required'
+        ]);
 
         jadwal::create([
                 'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
@@ -97,6 +96,15 @@ class jadwalcontroller extends Controller
      */
     public function update(Request $request, jadwal $jadwal)
     {
+        $request->validate([
+            'id_penawaran_sertifikasi' => 'required',
+            'id_kegiatan' => 'required',
+            'tanggal_awal' => 'required',
+            'tanggal_akhir' => 'required',
+            'is_show' => 'required',
+            'deskripsi' => 'required'
+        ]);
+        
         jadwal::where('id', $jadwal->id)
             ->update([
                 'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,

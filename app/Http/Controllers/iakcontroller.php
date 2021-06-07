@@ -42,11 +42,12 @@ class iakcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $iak = new instrumenasesmenkompetensi;
-		// $iak->id_ref_unit_kompetensi = $request->id_ref_unit_kompetensi;
-		// $iak->instrumen_pertanyaan = $request->instrumen_pertanyaan;
-		// $iak->status_instrumen = $request->status_instrumen;
-		// $iak->is_aktif = $request->is_aktif;
+        $request->validate([
+            'id_ref_unit_kompetensi' => 'required',
+            'instrumen_pertanyaan' => 'required',
+            'status_instrumen' => 'required',
+            'is_aktif' => 'required' 
+        ]);
 
         instrumenasesmenkompetensi::create($request->all());
         
@@ -84,10 +85,16 @@ class iakcontroller extends Controller
      */
     public function update(Request $request, instrumenasesmenkompetensi $instrumenasesmenkompetensi)
     {
+        $request->validate([
+            'id_ref_unit_kompetensi' => 'required',
+            'instrumen_pertanyaan' => 'required',
+            'status_instrumen' => 'required',
+            'is_aktif' => 'required' 
+        ]);
         instrumenasesmenkompetensi::where('id', $instrumenasesmenkompetensi->id)
         ->update([
             'id_ref_unit_kompetensi' => $request->id_ref_unit_kompetensi,
-            'instrumen_pertanyaan	' => $request->instrumen_pertanyaan,
+            'instrumen_pertanyaan' => $request->instrumen_pertanyaan,
             'status_instrumen' => $request->status_instrumen,
             'is_aktif' => $request->is_aktif
         ]);

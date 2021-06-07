@@ -14,27 +14,23 @@
                     @endif
                     <div class="form-group my-3">
                         <label for="id_ref_jenis_sertifikasi">id jenis sertifikasi</label>
-                        <input type="number" class="form-control" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi" placeholder="id jenis sertifikasi">
+                        <input type="number" class="form-control @error('id_ref_jenis_sertifikasi') is-invalid @enderror" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi" placeholder="id jenis sertifikasi" value="{{old('id_ref_jenis_sertifikasi')}}">
+                        @error('id_ref_jenis_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="deskripsi_penawaran">deskripsi penawaran</label>
-                        <textarea type="text" class="form-control" id="deskripsi_penawaran" name="deskripsi_penawaran" placeholder="Masukkan deskripsi penawaran"></textarea>
+                        <textarea type="text" class="form-control @error('deskripsi_penawaran') is-invalid @enderror" id="deskripsi_penawaran" name="deskripsi_penawaran" placeholder="Masukkan deskripsi penawaran">{{old('deskripsi_penawaran')}}</textarea>
+                        @error('deskripsi_penawaran') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="periode">periode</label>
-                        <input type="number" class="form-control" id="periode" name="periode" placeholder="masukkan periode" pattern="[0-9]{4}">
+                        <input type="number" class="form-control @error('periode') is-invalid @enderror" id="periode" name="periode" placeholder="masukkan periode" pattern="[0-9]{4}" value="{{old('periode')}}">
+                        @error('periode') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <!-- <div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="edited_by">Editor</label>
-                        <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
-                    </div> -->
                     <div class="form-group my-3">
                         <label for="is_aktif">Aktif</label>
-                        <input type="text" class="form-control" id="is_aktif" name="is_aktif" placeholder="true / false">
+                        <input type="text" class="form-control @error('is_aktif') is-invalid @enderror" id="is_aktif" name="is_aktif" placeholder="true / false" value="{{old('is_aktif')}}">
+                        @error('is_aktif') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/dataps') }}" class="btn bg-warning my-3">Lihat Data</a>

@@ -42,9 +42,10 @@ class rkucontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $rku = new refkuesioner;
-		// $rku->pertanyaan = $request->pertanyaan;
-		// $rku->is_aktif = $request->is_aktif;
+        $request->validate([
+            'pertanyaan'=>'required',
+            'is_aktif'=>'required'
+        ]);
 
         refkuesioner::create($request->all());
 
@@ -82,6 +83,11 @@ class rkucontroller extends Controller
      */
     public function update(Request $request, refkuesioner $refkuesioner)
     {
+        $request->validate([
+            'pertanyaan'=>'required',
+            'is_aktif'=>'required'
+        ]);
+
         refkuesioner::where('id', $refkuesioner->id)
             ->update([
                 'pertanyaan' => $request->pertanyaan,

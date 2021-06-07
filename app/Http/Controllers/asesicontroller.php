@@ -43,23 +43,20 @@ class asesicontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $asesi = new asesi;
-        // $asesi->nama = $request->nama;
-        // $asesi->nim = $request->nim;
-        // $asesi->nik = $request->nik;
-        // $asesi->tempat_lahir = $request->tempat_lahir;
-        // $asesi->tanggal_lahir = $request->tanggal_lahir;
-        // $asesi->jenis_kelamin = $request->jenis_kelamin;
-        // $asesi->id_ref_negara = $request->id_ref_negara;
-        // $asesi->alamat = $request->alamat;
-        // $asesi->no_telpon = $request->no_telpon;
-        // $asesi->email = $request->email;
-        // $asesi->kualifikasi_pendidikan = $request->kualifikasi_pendidikan;
-        // $asesi->id_unit = $request->id_unit;
-        // $asesi->created_by = $request->created_by;
-        // $asesi->edited_by = $request->edited_by;
-        // $asesi->id_user = $request->id_user;
-        // $asesi->save();
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'nik' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'id_ref_negara' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+            'email' => 'required',
+            'kualifikasi_pendidikan' => 'required',
+            'id_unit' => 'required',
+        ]);
 
         asesi::create([
             'nama' => $request->nama,
@@ -113,6 +110,21 @@ class asesicontroller extends Controller
      */
     public function update(Request $request, asesi $asesi)
     {
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'nik' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'id_ref_negara' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+            'email' => 'required',
+            'kualifikasi_pendidikan' => 'required',
+            'id_unit' => 'required',
+        ]);
+        
         asesi::where('id', $asesi->id)
         ->update([
             'nama' => $request->nama,

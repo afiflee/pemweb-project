@@ -14,31 +14,28 @@
                     @endif
 					<div class="form-group my-3">
                         <label for="id_penawaran_sertifikasi">id penawaran sertifikasi</label>
-                        <input type="number" class="form-control" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi" placeholder="id penawaran sertifikasi">
+                        <input type="number" class="form-control @error('id_penawaran_sertifikasi') is-invalid @enderror" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi" placeholder="id penawaran sertifikasi" value="{{old('id_penawaran_sertifikasi')}}">
+                        @error('id_penawaran_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="id_asesi">id asesi</label>
-                        <input type="number" class="form-control" id="id_asesi" name="id_asesi" placeholder="id asesi">
+                        <input type="number" class="form-control @error('id_asesi') is-invalid @enderror" id="id_asesi" name="id_asesi" placeholder="id asesi" value="{{old('id_asesi')}}">
+                        @error('id_asesi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="status_akhir_sertifikasi">status akhir sertifikasi</label>
-                        <input type="text" class="form-control" id="status_akhir_sertifikasi" name="status_akhir_sertifikasi" placeholder="Masukkan status akhir sertifikasi">
+                        <input type="text" class="form-control @error('status_akhir_sertifikasi') is-invalid @enderror" id="status_akhir_sertifikasi" name="status_akhir_sertifikasi" placeholder="Masukkan status akhir sertifikasi" value="{{old('status_akhir_sertifikasi')}}">
+                        @error('status_akhir_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="tanggal_status_akhir">Tanggal status akhir</label>
-                        <input type="date" class="form-control" id="tanggal_status_akhir" name="tanggal_status_akhir" placeholder="Tanggal status akhir">
+                        <input type="date" class="form-control @error('tanggal_status_akhir') is-invalid @enderror" id="tanggal_status_akhir" name="tanggal_status_akhir" placeholder="Tanggal status akhir" value="{{old('tanggal_status_akhir')}}">
+                        @error('tanggal_status_akhir') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <!-- <div class="form-group my-3">
-                        <label for="created_by">Creator</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="Masukkan Nama Anda">
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="edited_by">Editor</label>
-                        <input type="text" class="form-control" id="edited_by" name="edited_by" placeholder="Kosongkan bila pertama mengisi">
-                    </div> -->
                     <div class="form-group my-3">
                         <label for="status_pendaftaran">status pendaftaran</label>
-                        <input type="text" class="form-control" id="status_pendaftaran" name="status_pendaftaran" placeholder="status pendaftaran">
+                        <input type="text" class="form-control @error('status_pendaftaran') is-invalid @enderror" id="status_pendaftaran" name="status_pendaftaran" placeholder="status pendaftaran" value="{{old('status_pendaftaran')}}">
+                        @error('status_pendaftaran') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/datap') }}" class="btn bg-warning my-3">Lihat Data</a>

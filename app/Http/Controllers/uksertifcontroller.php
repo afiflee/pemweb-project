@@ -42,10 +42,12 @@ class uksertifcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $uksertif = new unitkompetensisertifikasi;
-		// $uksertif->id_ref_jenis_sertifikasi = $request->id_ref_jenis_sertifikasi;
-		// $uksertif->id_ref_kompetensi = $request->id_ref_kompetensi;
-		// $uksertif->is_aktif = $request->is_aktif;
+        $request->validate([
+                'id_ref_jenis_sertifikasi' => 'required',
+                'id_ref_kompetensi' => 'required',
+                'is_aktif' => 'required'
+        ]);
+        
         unitkompetensisertifikasi::create($request->all());
 
 		return redirect('/index/uksertif')->with('status', 'data berhasil masuk');
@@ -82,6 +84,12 @@ class uksertifcontroller extends Controller
      */
     public function update(Request $request, unitkompetensisertifikasi $unitkompetensisertifikasi)
     {
+        $request->validate([
+                'id_ref_jenis_sertifikasi' => 'required',
+                'id_ref_kompetensi' => 'required',
+                'is_aktif' => 'required'
+        ]);
+
         unitkompetensisertifikasi::where('id', $unitkompetensisertifikasi->id)
             ->update([
                 'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,

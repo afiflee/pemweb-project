@@ -42,10 +42,11 @@ class sscontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $ss = new syaratsertifikasi;
-		// $ss->id_ref_jenis_sertifikasi = $request->id_ref_jenis_sertifikasi;
-        // $ss->syarat = $request->syarat;
-        // $ss->is_aktif = $request->is_aktif;
+        $request->validate([
+            'id_ref_jenis_sertifikasi' => 'required',
+            'syarat' => 'required',
+            'is_aktif' => 'required'
+        ]);
 
         syaratsertifikasi::create($request->all());
 
@@ -83,6 +84,12 @@ class sscontroller extends Controller
      */
     public function update(Request $request, syaratsertifikasi $syaratsertifikasi)
     {
+        $request->validate([
+                'id_ref_jenis_sertifikasi' => 'required',
+                'syarat' => 'required',
+                'is_aktif' => 'required'
+        ]);
+
         syaratsertifikasi::where('id', $syaratsertifikasi->id)
             ->update([
                 'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,

@@ -138,6 +138,7 @@ Route::delete('/datapsy/{pendaftarsyarat}', [psycontroller::class, 'destroy']);
 Route::get('/datapsy/{pendaftarsyarat}/edit', [psycontroller::class, 'edit']);
 Route::put('/datapsy/{pendaftarsyarat}', [psycontroller::class, 'update']);
 
+
 //tabel pendaftar_instrumen
 Route::get('/index/pi', [picontroller::class, 'create']);
 Route::get('/index/datapi', [picontroller::class, 'index']);

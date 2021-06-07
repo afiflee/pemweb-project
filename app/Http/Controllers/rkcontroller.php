@@ -43,11 +43,10 @@ class rkcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $rk = new refkegiatan;
-        // $rk->nama_kegiatan = $request->nama_kegiatan;
-        // $rk->deskripsi = $request->deskripsi;
-        // $rk->created_by = $request->created_by;
-        // $rk->save();
+        $request->validate([
+            'nama_kegiatan' => 'required',
+                'deskripsi' => 'required',
+        ]);
 
         refkegiatan::create([
                 'nama_kegiatan' => $request->nama_kegiatan,
@@ -89,6 +88,11 @@ class rkcontroller extends Controller
      */
     public function update(Request $request, refkegiatan $refkegiatan)
     {
+        $request->validate([
+            'nama_kegiatan' => 'required',
+                'deskripsi' => 'required',
+        ]);
+        
         refkegiatan::where('id', $refkegiatan->id)
             ->update([
                 'nama_kegiatan' => $request->nama_kegiatan,

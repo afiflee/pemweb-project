@@ -42,10 +42,11 @@ class apcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $ap = new asesorpendaftar();
-		// $ap->id_asesor_jenis_sertifikasi = $request->id_asesor_jenis_sertifikasi;
-		// $ap->id_pendaftar = $request->id_pendaftar;
-		// $ap->hasil = $request->hasil;
+        $request->validate([
+            'id_asesor_jenis_sertifikasi' => 'required',
+            'id_pendaftar' => 'required',
+            'hasil' => 'required'
+        ]);
 
         asesorpendaftar::create($request->all());
 
@@ -83,6 +84,11 @@ class apcontroller extends Controller
      */
     public function update(Request $request, asesorpendaftar $asesorpendaftar)
     {
+        $request->validate([
+                'id_asesor_jenis_sertifikasi' => 'required',
+                'id_pendaftar' => 'required',
+                'hasil' => 'required'
+        ]);
         asesorpendaftar::where('id', $asesorpendaftar->id)
             ->update([
                 'id_asesor_jenis_sertifikasi' => $request->id_asesor_jenis_sertifikasi,

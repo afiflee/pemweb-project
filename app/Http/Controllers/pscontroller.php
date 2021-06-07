@@ -43,14 +43,12 @@ class pscontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $ps = new penawaransertifikasi;
-		// $ps->id_ref_jenis_sertifikasi = $request->id_ref_jenis_sertifikasi;
-		// $ps->deskripsi_penawaran = $request->deskripsi_penawaran;
-		// $ps->periode = $request->is_aktif;
-		// $ps->created_by = $request->created_by;
-		// $ps->edited_by = $request->edited_by;
-		// $ps->is_aktif = $request->is_aktif;
-        // $ps->save();
+        $request->validate([
+            'id_ref_jenis_sertifikasi' => 'required',
+            'deskripsi_penawaran' => 'required',
+            'periode' => 'required',
+            'is_aktif' => 'required'
+        ]);
 
         penawaransertifikasi::create([
             'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
@@ -95,6 +93,13 @@ class pscontroller extends Controller
      */
     public function update(Request $request, penawaransertifikasi $penawaransertifikasi)
     {
+        $request->validate([
+            'id_ref_jenis_sertifikasi' => 'required',
+            'deskripsi_penawaran' => 'required',
+            'periode' => 'required',
+            'is_aktif' => 'required'
+        ]);
+
         penawaransertifikasi::where('id', $penawaransertifikasi->id)
         ->update([
             'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,

@@ -42,9 +42,11 @@ class rukcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $ruk = new refunitkompetensi;
-        // $ruk->nama = $request->nama;
-        // $ruk->is_aktif = $request->is_aktif;
+        $request->validate([
+            'nama'=>'required',
+            'is_aktif'=>'required'
+        ]);
+
         refunitkompetensi::create($request->all());
 
         return redirect('/index/ruk')->with('status', 'data berhasil masuk');
@@ -81,6 +83,11 @@ class rukcontroller extends Controller
      */
     public function update(Request $request, refunitkompetensi $refunitkompetensi)
     {
+        $request->validate([
+            'nama'=>'required',
+            'is_aktif'=>'required'
+        ]);
+
         refunitkompetensi::where('id', $refunitkompetensi->id)
             ->update([
                 'nama' => $request->nama,

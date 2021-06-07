@@ -43,18 +43,16 @@ class picontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $pi = new pendaftarinstrumen;
-		// $pi->id_pendaftar = $request->id_pendaftar;
-		// $pi->id_instrumen_asesmen = $request->id_instrumen_asesmen;
-		// $pi->jawaban_self_asesmen = $request->jawaban_self_asesmen;
-		// $pi->path_bukti = $request->path_bukti;
-		// $pi->komentar_bukti = $request->komentar_bukti;
-		// $pi->jawaban_asesor_verifikasi = $request->jawaban_asesor_verifikasi;
-		// $pi->verified_by = $request->verified_by;
-		// $pi->verified_at = $request->verified_at;
-		// $pi->created_by = $request->created_by;
-		// $pi->edited_by = $request->edited_by;
-        // $pi->save();
+        $request->validate([
+            'id_pendaftar' => 'required',
+            'id_instrumen_asesmen' => 'required',
+            'jawaban_self_asesmen' => 'required',
+            'path_bukti' => 'required',
+            'komentar_bukti' => 'required',
+            'jawaban_asesor_verifikasi' => 'required',
+            'verified_by' => 'required',
+            'verified_at' => 'required'
+        ]);
 
         pendaftarinstrumen::create([
                 'id_pendaftar' => $request->id_pendaftar,
@@ -103,6 +101,17 @@ class picontroller extends Controller
      */
     public function update(Request $request, pendaftarinstrumen $pendaftarinstrumen)
     {
+        $request->validate([
+            'id_pendaftar' => 'required',
+            'id_instrumen_asesmen' => 'required',
+            'jawaban_self_asesmen' => 'required',
+            'path_bukti' => 'required',
+            'komentar_bukti' => 'required',
+            'jawaban_asesor_verifikasi' => 'required',
+            'verified_by' => 'required',
+            'verified_at' => 'required'
+        ]);
+
         pendaftarinstrumen::where('id', $pendaftarinstrumen->id)
             ->update([
                 'id_pendaftar' => $request->id_pendaftar,

@@ -42,16 +42,19 @@ class asesorcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $asesor = new asesor;
-        // $asesor->nama = $request->nama;
-        // $asesor->nim = $request->nim;
-        // $asesor->nik = $request->nik;
-        // $asesor->tempat_lahir = $request->tempat_lahir;
-        // $asesor->tanggal_lahir = $request->tanggal_lahir;
-        // $asesor->jenis_kelamin = $request->jenis_kelamin;
-        // $asesor->alamat = $request->alamat;
-        // $asesor->no_telpon = $request->no_telpon;
-        // $asesor->email = $request->email;
+        
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'nik' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+            'email' => 'required'
+
+        ]);
 
         asesor::create([
             'nama' => $request->nama,
@@ -98,6 +101,20 @@ class asesorcontroller extends Controller
      */
     public function update(Request $request, asesor $asesor)
     {
+
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'nik' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+            'email' => 'required'
+
+        ]);
+        
         asesor::where('id', $asesor->id)
             ->update([
                 'nama' => $request->nama,

@@ -43,6 +43,14 @@ class pcontroller extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+                'id_penawaran_sertifikasi' => 'required',
+                'id_asesi' => 'required',
+                'status_akhir_sertifikasi' => 'required',
+                'tanggal_status_akhir' => 'required',
+                'status_pendaftaran' => 'required'
+        ]);
+
         pendaftar::create([
                 'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
                 'id_asesi' => $request->id_asesi,
@@ -87,6 +95,14 @@ class pcontroller extends Controller
      */
     public function update(Request $request, pendaftar $pendaftar)
     {
+        $request->validate([
+            'id_penawaran_sertifikasi' => 'required',
+            'id_asesi' => 'required',
+            'status_akhir_sertifikasi' => 'required',
+            'tanggal_status_akhir' => 'required',
+            'status_pendaftaran' => 'required'
+        ]);
+    
         pendaftar::where('id', $pendaftar->id)
             ->update([
                 'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,

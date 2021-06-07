@@ -51,6 +51,12 @@ class rjscontroller extends Controller
         // $refjenissertif->is_aktif = $request->is_aktif;
         // $refjenissertif->save();
 
+        $request->validate([
+            'nama' => 'required',
+            'status_jenis_sertifikasi' => 'required',
+            'is_aktif' => 'required',
+        ]);
+
         refjenissertifikasi::create([
             'nama' => $request->nama,
             'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
@@ -95,6 +101,12 @@ class rjscontroller extends Controller
      */
     public function update(Request $request, refjenissertifikasi $refjenissertifikasi)
     {
+        $request->validate([
+            'nama' => 'required',
+            'status_jenis_sertifikasi' => 'required',
+            'is_aktif' => 'required',
+        ]);
+
         refjenissertifikasi::where('id', $refjenissertifikasi->id)
             ->update([
                 'nama' => $request->nama,

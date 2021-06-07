@@ -43,18 +43,16 @@ class psycontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $psy = new pendaftarsyarat;
-		// $psy->id_syarat_sertifikasi = $request->id_syarat_sertifikasi;
-		// $psy->id_pendaftar = $request->id_pendaftar;
-		// $psy->status_verifikasi_syarat = $request->status_verifikasi_syarat;
-		// $psy->path_bukti = $request->path_bukti;
-		// $psy->verifikasi_asesor = $request->verifikasi_asesor;
-		// $psy->komentar_asesor = $request->komentar_asesor;
-		// $psy->verified_by = $request->verified_by;
-		// $psy->verified_at = $request->verified_at;
-		// $psy->created_by = $request->created_by;
-		// $psy->edited_by = $request->edited_by;
-        // $psy->save();
+        $request->validate([
+            'id_syarat_sertifikasi' => 'required',
+            'id_pendaftar' => 'required',
+            'status_verifikasi_syarat' => 'required',
+            'path_bukti' => 'required',
+            'verifikasi_asesor' => 'required',
+            'komentar_asesor' => 'required',
+            'verified_by' => 'required',
+            'verified_at' => 'required',
+        ]);
 
         pendaftarsyarat::create([
                 'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
@@ -103,6 +101,17 @@ class psycontroller extends Controller
      */
     public function update(Request $request, pendaftarsyarat $pendaftarsyarat)
     {
+        $request->validate([
+            'id_syarat_sertifikasi' => 'required',
+            'id_pendaftar' => 'required',
+            'status_verifikasi_syarat' => 'required',
+            'path_bukti' => 'required',
+            'verifikasi_asesor' => 'required',
+            'komentar_asesor' => 'required',
+            'verified_by' => 'required',
+            'verified_at' => 'required'
+        ]);
+        
         pendaftarsyarat::where('id', $pendaftarsyarat->id)
             ->update([
                 'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,

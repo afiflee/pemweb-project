@@ -43,13 +43,11 @@ class pkcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $pk = new pendaftarkuesioner;
-		// $pk->id_pendaftar = $request->id_pendaftar;
-		// $pk->id_kuesioner = $request->id_kuesioner;
-		// $pk->jawaban = $request->jawaban;
-		// $pk->created_by = $request->is_aktif;
-		// $pk->edited_by = $request->edited_by;
-        // $pk->save();
+        $request->validate([
+                'id_pendaftar' => 'required',
+                'id_kuesioner' => 'required',
+                'jawaban' => 'required'
+        ]);
 
         pendaftarkuesioner::create([
                 'id_pendaftar' => $request->id_pendaftar,
@@ -93,6 +91,12 @@ class pkcontroller extends Controller
      */
     public function update(Request $request, pendaftarkuesioner $pendaftarkuesioner)
     {
+        $request->validate([
+            'id_pendaftar' => 'required',
+            'id_kuesioner' => 'required',
+            'jawaban' => 'required'
+        ]);
+        
         pendaftarkuesioner::where('id', $pendaftarkuesioner->id)
             ->update([
                 'id_pendaftar' => $request->id_pendaftar,

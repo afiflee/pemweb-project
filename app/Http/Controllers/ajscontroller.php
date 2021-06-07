@@ -43,12 +43,13 @@ class ajscontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $ajs = new asesorjenissertifikasi;
-		// $ajs->id_asesor = $request->id_asesor;
-		// $ajs->id_ref_jenis_sertifikasi = $request->id_ref_jenis_sertifikasi;
-		// $ajs->tanggal_awal_berlaku = $request->tanggal_awal_berlaku;
-		// $ajs->tanggal_akhir_berlaku = $request->tanggal_akhir_berlaku;
-		// $ajs->no_sertifikat = $request->no_sertifikat;
+        $request->validate([
+            'id_asesor' => 'required',
+            'id_ref_jenis_sertifikasi' => 'required',
+            'tanggal_awal_berlaku' => 'required',
+            'tanggal_akhir_berlaku' => 'required',
+            'no_sertifikat' => 'required'
+        ]);
 
         asesorjenissertifikasi::create($request->all());
 
@@ -86,6 +87,13 @@ class ajscontroller extends Controller
      */
     public function update(Request $request, asesorjenissertifikasi $asesorjenissertifikasi)
     {
+        $request->validate([
+                'id_asesor' => 'required',
+                'id_ref_jenis_sertifikasi' => 'required',
+                'tanggal_awal_berlaku' => 'required',
+                'tanggal_akhir_berlaku' => 'required',
+                'no_sertifikat' => 'required'
+        ]);
              asesorjenissertifikasi::where('id', $asesorjenissertifikasi->id)
             ->update([
                 'id_asesor' => $request->id_asesor,
