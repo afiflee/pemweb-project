@@ -76,7 +76,9 @@ class asesicontroller extends Controller
             'id_user' => Auth::user()->id
         ]);
 
-        return redirect('/index/asesi')->with('status', 'data berhasil masuk');
+        auth()->user()->assignRole('asesi');
+
+        return redirect('/home')->with('status', 'Anda berhasil terdaftar sebagai asesi');
     }
 
     /**

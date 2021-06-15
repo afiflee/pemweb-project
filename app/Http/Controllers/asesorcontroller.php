@@ -67,6 +67,9 @@ class asesorcontroller extends Controller
             'no_telpon' => $request->no_telpon,
             'email' => $request->email
         ]);
+
+        auth()->user()->assignRole('asesor');
+
         return redirect('/index/asesor')->with('status', 'data berhasil masuk');
     }
 

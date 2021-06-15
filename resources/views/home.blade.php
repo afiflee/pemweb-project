@@ -20,6 +20,17 @@
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
+        @hasrole('asesi')
+            <div class="col-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Daftar</h5>
+                    <p class="card-text">Anda Sudah Terdaftar Sebagai Asesi</p>
+                    <a href="{{ url('/index/ps') }}" class="btn bg-primary my-3">Daftar Sertifikasi</a>
+                </div>
+                </div>
+            </div>
+        @else
             <div class="col-6">
                 <div class="card">
                 <div class="card-body">
@@ -30,6 +41,7 @@
                 </div>
                 </div>
             </div>
+        @endhasrole
             <div class="col-6">
                 <div class="card">
                 <div class="card-body">
