@@ -22,13 +22,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}" style="color:#8EDFFF ;font-size: 28px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                    Sertifika.<span style="color: #B2FFFF">si</span>
                 </a>
                 <a class="navbar-brand" href="{{ url('/index') }}">
-                    Tabel
+                    onClickTabel
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -79,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-image: url('https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2019/08/Blog_Inspirasi-Desain-Ruang-Kerja-Terbaik-untuk-Kerja-Lebih-Produktif.jpeg'); background-attachment: fixed; background-size: cover; margin-top: 68px">
             @yield('content')
         </main>
     </div>

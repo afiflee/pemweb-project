@@ -18,12 +18,12 @@
                         @error('nama') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="nim">nim</label>
+                        <label for="nim">NIM</label>
                         <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" placeholder="Masukkan nim" value="{{old('nim')}}">
                         @error('nim') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="nik">nik</label>
+                        <label for="nik">NIK</label>
                         <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" placeholder="Masukkan nik" value="{{old('nik')}}">
                         @error('nik') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
@@ -48,17 +48,17 @@
                         @error('id_ref_negara') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="alamat">alamat</label>
+                        <label for="alamat">Alamat</label>
                         <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" placeholder="masukkan alamat" value="{{old('alamat')}}">
                         @error('alamat') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="no_telpon">no telepon</label>
+                        <label for="no_telpon">No Telepon</label>
                         <input type="tel" class="form-control @error('no_telpon') is-invalid @enderror" id="no_telpon" name="no_telpon" placeholder="masukkan nomor telepon" value="{{old('no_telpon')}}">
                         @error('no_telpon') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="email">email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="masukkan email" value="{{old('email')}}">
                         @error('email') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
@@ -68,7 +68,7 @@
                         @error('kualifikasi_pendidikan') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="id_unit">nomor unit</label>
+                        <label for="id_unit">Nomor Unit</label>
                         <input type="number" class="form-control @error('id_unit') is-invalid @enderror" id="id_unit" name="id_unit" placeholder="nomor unit" value="{{old('id_unit')}}">
                         @error('id_unit') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
