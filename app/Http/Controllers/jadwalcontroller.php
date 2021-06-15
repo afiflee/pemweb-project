@@ -6,6 +6,7 @@ use App\Models\jadwal;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Contracts\Permission;
 
 class jadwalcontroller extends Controller
 {

@@ -31,13 +31,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'tabel']);
 
 //tabel ref_jenis_sertifikasi
