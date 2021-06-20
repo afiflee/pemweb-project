@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>ref jenis Sertifikasi</h1>
@@ -36,7 +36,14 @@
                         <td>{{$rjs -> created_at}}</td>
                         <td>{{$rjs -> edited_by}}</td>
                         <td>{{$rjs -> updated_at}}</td>
-                        <td>{{$rjs -> is_aktif}}</td>
+                        <td>
+                        <!-- {{$rjs -> is_aktif}} -->
+                        @if ($rjs -> is_aktif == 1)
+                        Aktif 
+                        @else 
+                        Tidak Aktif
+                        @endif
+                        </td>
                         <td>
                         <a href="/datarjs/{{$rjs->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datarjs/{{$rjs->id}}" method="POST" class="d-inline">

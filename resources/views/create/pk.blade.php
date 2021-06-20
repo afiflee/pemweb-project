@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="background-color: white">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
@@ -12,14 +12,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-					<div class="form-group my-3">
-                        <label for="id_pendaftar">nomor pendaftar</label>
-                        <input type="number" class="form-control @error('id_pendaftar') is-invalid @enderror" id="id_pendaftar" name="id_pendaftar" placeholder="nomor pendaftar" value="{{old('id_pendaftar')}}">
-                        @error('id_pendaftar') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
                     <div class="form-group my-3">
                         <label for="id_kuesioner">nomor kuesioner</label>
-                        <input type="number" class="form-control @error('id_kuesioner') is-invalid @enderror" id="id_kuesioner" name="id_kuesioner" placeholder="nomor kuesioner" value="{{old('id_kuesioner')}}">
+                        <select class="form-control @error('id_kuesioner') is-invalid @enderror" id="id_kuesioner" name="id_kuesioner">
+                            @foreach($kuesioner as $kuesioner)
+                                <option value="{{$kuesioner->id}}">{{$kuesioner->pertanyaan}}</option>
+                            @endforeach
+                        </select>
                         @error('id_kuesioner') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">

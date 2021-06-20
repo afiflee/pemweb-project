@@ -10,5 +10,8 @@ class unitkompetensisertifikasi extends Model
     public $timestamps = false;
     protected $table = 'unit_kompetensi_sertifikasi';
     protected $fillable = ['id_ref_jenis_sertifikasi', 'id_ref_kompetensi', 'is_aktif'];
+    protected $attributes = [
+        'is_aktif' => 1
+    ];
     use HasFactory;
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\syaratsertifikasi;
 use App\Http\Controllers\Controller;
+use App\Models\refjenissertifikasi;
 use Illuminate\Http\Request;
 
 class sscontroller extends Controller
@@ -31,7 +32,8 @@ class sscontroller extends Controller
      */
     public function create()
     {
-        return view('create.ss');
+        $jenis = refjenissertifikasi::all();
+        return view('create.ss', compact('jenis'));
     }
 
     /**
@@ -45,7 +47,6 @@ class sscontroller extends Controller
         $request->validate([
             'id_ref_jenis_sertifikasi' => 'required',
             'syarat' => 'required',
-            'is_aktif' => 'required'
         ]);
 
         syaratsertifikasi::create($request->all());
@@ -72,7 +73,8 @@ class sscontroller extends Controller
      */
     public function edit(syaratsertifikasi $syaratsertifikasi)
     {
-        return view('edit.ss', compact('syaratsertifikasi'));
+        $jenis = refjenissertifikasi::all();
+        return view('edit.ss', compact('syaratsertifikasi', 'jenis'));
     }
 
     /**

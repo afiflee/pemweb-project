@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\asesorpendaftar;
 use App\Http\Controllers\Controller;
+use App\Models\asesorjenissertifikasi;
+use App\Models\pendaftar;
 use Illuminate\Http\Request;
 
 class apcontroller extends Controller
@@ -31,7 +33,9 @@ class apcontroller extends Controller
      */
     public function create()
     {
-        return view('create.ap');
+        $asesorjenis = asesorjenissertifikasi::all();
+        $pendaftar = pendaftar::all();
+        return view('create.ap', compact('asesorjenis', 'pendaftar'));
     }
 
     /**
@@ -72,7 +76,9 @@ class apcontroller extends Controller
      */
     public function edit(asesorpendaftar $asesorpendaftar)
     {
-        return view('edit.ap',compact('asesorpendaftar'));
+        $asesorjenis = asesorjenissertifikasi::all();
+        $pendaftar = pendaftar::all();
+        return view('edit.ap',compact('asesorpendaftar', 'asesorjenis', 'pendaftar'));
     }
 
     /**

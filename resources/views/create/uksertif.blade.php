@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="background-color: white">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
@@ -14,18 +14,21 @@
                     @endif
                     <div class="form-group my-3">
                         <label for="id_ref_jenis_sertifikasi">id jenis sertifikasi</label>
-                        <input type="number" class="form-control @error('id_ref_jenis_sertifikasi') is-invalid @enderror" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi" placeholder="id jenis sertifikasi" value="{{old('id_ref_jenis_sertifikasi')}}">
+                        <select class="form-control @error('id_ref_jenis_sertifikasi') is-invalid @enderror" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi">
+                            @foreach($jenis as $jenis)
+                                <option value="{{$jenis->id}}">{{$jenis->nama}}</option>
+                            @endforeach
+                        </select>
                         @error('id_ref_jenis_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="id_ref_kompetensi">nomor id unit komptensi</label>
-                        <input type="number" class="form-control @error('id_ref_kompetensi') is-invalid @enderror" id="id_ref_kompetensi" name="id_ref_kompetensi" placeholder="nomor id unit kompetensi" value="{{old('id_ref_kompetensi')}}">
+                        <select class="form-control @error('id_ref_kompetensi') is-invalid @enderror" id="id_ref_kompetensi" name="id_ref_kompetensi">
+                            @foreach($unit as $unit)
+                                <option value="{{$unit->id}}">{{$unit->nama}}</option>
+                            @endforeach
+                        </select>
                         @error('id_ref_kompetensi') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="is_aktif">Aktif</label>
-                        <input type="text" class="form-control @error('is_aktif') is-invalid @enderror" id="is_aktif" name="is_aktif" placeholder="true / false" value="{{old('is_aktif')}}">
-                        @error('is_aktif') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/datauksertif') }}" class="btn bg-warning my-3">Lihat Data</a>

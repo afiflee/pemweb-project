@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>asesor jenis sertifikasi</h1>
@@ -16,7 +16,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id assesor</th>
+                        <th scope="col">id asesor</th>
                         <th scope="col">id ref jenis sertifikasi</th>
                         <th scope="col">tanggal awal berlaku</th>
                         <th scope="col">tanggal akhir berlaku</th>
@@ -28,7 +28,7 @@
                     @foreach($ajs as $ajs)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
-                        <td>{{$ajs -> id_assesor}}</td>
+                        <td>{{$ajs -> id_asesor}}</td>
                         <td>{{$ajs -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ajs -> tanggal_awal_berlaku}}</td>
                         <td>{{$ajs -> tanggal_akhir_berlaku}}</td>

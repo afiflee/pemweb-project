@@ -44,7 +44,6 @@ class rkucontroller extends Controller
     {
         $request->validate([
             'pertanyaan'=>'required',
-            'is_aktif'=>'required'
         ]);
 
         refkuesioner::create($request->all());

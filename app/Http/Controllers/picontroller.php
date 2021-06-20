@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\pendaftarinstrumen;
 use App\Http\Controllers\Controller;
+use App\Models\instrumenasesmenkompetensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class picontroller extends Controller
 {
@@ -32,7 +34,8 @@ class picontroller extends Controller
      */
     public function create()
     {
-        return view('create.pi');
+        $instrumen = instrumenasesmenkompetensi::all();
+        return view('create.pi', compact('instrumen'));
     }
 
     /**
@@ -44,25 +47,30 @@ class picontroller extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_pendaftar' => 'required',
             'id_instrumen_asesmen' => 'required',
             'jawaban_self_asesmen' => 'required',
             'path_bukti' => 'required',
             'komentar_bukti' => 'required',
-            'jawaban_asesor_verifikasi' => 'required',
-            'verified_by' => 'required',
-            'verified_at' => 'required'
         ]);
 
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+
+        $idpendaftar = DB::table('pendaftar')
+        ->join('asesi', 'pendaftar.id_asesi', '=', 'asesi.id')
+        ->where('asesi.id', $idasesi)
+        ->value('pendaftar.id');
+
         pendaftarinstrumen::create([
-                'id_pendaftar' => $request->id_pendaftar,
+                'id_pendaftar' => $idpendaftar,
                 'id_instrumen_asesmen' => $request->id_instrumen_asesmen,
                 'jawaban_self_asesmen' => $request->jawaban_self_asesmen,
                 'path_bukti' => $request->path_bukti,
                 'komentar_bukti' => $request->komentar_bukti,
-                'jawaban_asesor_verifikasi' => $request->jawaban_asesor_verifikasi,
-                'verified_by' => $request->verified_by,
-                'verified_at' => $request->verified_at,
+                'verified_by' => Auth::user()->name,
+                'verified_at' => now(),
                 'created_by' => Auth::user()->name,
                 'edited_by' => Auth::user()->name
             ]);
@@ -102,28 +110,23 @@ class picontroller extends Controller
     public function update(Request $request, pendaftarinstrumen $pendaftarinstrumen)
     {
         $request->validate([
-            'id_pendaftar' => 'required',
-            'id_instrumen_asesmen' => 'required',
             'jawaban_self_asesmen' => 'required',
             'path_bukti' => 'required',
             'komentar_bukti' => 'required',
             'jawaban_asesor_verifikasi' => 'required',
-            'verified_by' => 'required',
-            'verified_at' => 'required'
         ]);
 
         pendaftarinstrumen::where('id', $pendaftarinstrumen->id)
             ->update([
-                'id_pendaftar' => $request->id_pendaftar,
-                'id_instrumen_asesmen' => $request->id_instrumen_asesmen,
                 'jawaban_self_asesmen' => $request->jawaban_self_asesmen,
                 'path_bukti' => $request->path_bukti,
                 'komentar_bukti' => $request->komentar_bukti,
                 'jawaban_asesor_verifikasi' => $request->jawaban_asesor_verifikasi,
-                'verified_by' => $request->verified_by,
-                'verified_at' => $request->verified_at,
+                'verified_by' => Auth::user()->name,
+                'verified_at' => now(),
                 'edited_by' => Auth::user()->name
             ]);
+
         return redirect('/index/datapi')->with('status', 'data berhasil diubah');
     }
 

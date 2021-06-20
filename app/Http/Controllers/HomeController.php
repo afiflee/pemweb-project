@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,6 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(['role:admin'])->only('tabel');
     }
 
     /**
@@ -24,8 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        return view('home', compact('user'));
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+        return view('home', compact('idasesi'));
     }
 
     public function home(){

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="background-color: white">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
@@ -14,13 +14,12 @@
                     @endif
 					<div class="form-group my-3">
                         <label for="id_penawaran_sertifikasi">id penawaran sertifikasi</label>
-                        <input type="number" class="form-control @error('id_penawaran_sertifikasi') is-invalid @enderror" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi" placeholder="id penawaran sertifikasi" value="{{old('id_penawaran_sertifikasi')}}">
+                        <select class="form-control @error('id_penawaran_sertifikasi') is-invalid @enderror" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi">
+                            @foreach($penawaran as $penawaran)
+                                <option value="{{$penawaran->id}}">{{$penawaran->id}}</option>
+                            @endforeach
+                        </select>
                         @error('id_penawaran_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="id_asesi">id asesi</label>
-                        <input type="number" class="form-control @error('id_asesi') is-invalid @enderror" id="id_asesi" name="id_asesi" placeholder="id asesi" value="{{old('id_asesi')}}">
-                        @error('id_asesi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="status_akhir_sertifikasi">status akhir sertifikasi</label>

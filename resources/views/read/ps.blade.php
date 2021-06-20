@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>penawaran sertifikasi</h1>
@@ -38,7 +38,11 @@
                         <td>{{$ps -> created_at}}</td>
                         <td>{{$ps -> updated_at}}</td>
                         <td>{{$ps -> edited_by}}</td>
-                        <td>{{$ps -> is_aktif}}</td>
+                        <td>@if ($ps -> is_aktif == 1)
+                        Aktif 
+                        @else 
+                        Tidak Aktif
+                        @endif</td>
                         <td>
                         <a href="/dataps/{{$ps->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/dataps/{{$ps->id}}" method="POST" class="d-inline">

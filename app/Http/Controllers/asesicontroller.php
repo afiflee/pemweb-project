@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\asesi;
 use App\Http\Controllers\Controller;
+use App\Models\refunitkompetensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class asesicontroller extends Controller
 {
@@ -32,7 +34,8 @@ class asesicontroller extends Controller
      */
     public function create()
     {
-        return view('create.asesi');
+        $unit = refunitkompetensi::all();
+        return view('create.asesi', compact('unit'));
     }
 
     /**
@@ -100,7 +103,8 @@ class asesicontroller extends Controller
      */
     public function edit(asesi $asesi)
     {
-        return view('edit.asesi', compact('asesi'));
+        $unit = refunitkompetensi::all();
+        return view('edit.asesi', compact('asesi', 'unit'));
     }
 
     /**

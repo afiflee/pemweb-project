@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\asesorjenissertifikasi;
 use App\Http\Controllers\Controller;
+use App\Models\asesor;
+use App\Models\refjenissertifikasi;
 use Illuminate\Http\Request;
 
 class ajscontroller extends Controller
@@ -32,7 +34,9 @@ class ajscontroller extends Controller
      */
     public function create()
     {
-        return view('create.ajs');
+        $asesor = asesor::all();
+        $jenis = refjenissertifikasi::all();
+        return view('create.ajs', compact('asesor', 'jenis'));
     }
 
     /**
@@ -75,7 +79,8 @@ class ajscontroller extends Controller
      */
     public function edit(asesorjenissertifikasi $asesorjenissertifikasi)
     {
-        return view('edit.ajs', compact('asesorjenissertifikasi'));
+        $asesor = asesor::all();
+        return view('edit.ajs', compact('asesorjenissertifikasi', 'asesor'));
     }
 
     /**
@@ -89,7 +94,6 @@ class ajscontroller extends Controller
     {
         $request->validate([
                 'id_asesor' => 'required',
-                'id_ref_jenis_sertifikasi' => 'required',
                 'tanggal_awal_berlaku' => 'required',
                 'tanggal_akhir_berlaku' => 'required',
                 'no_sertifikat' => 'required'
@@ -97,7 +101,6 @@ class ajscontroller extends Controller
              asesorjenissertifikasi::where('id', $asesorjenissertifikasi->id)
             ->update([
                 'id_asesor' => $request->id_asesor,
-                'id_ref_jenis_sertifikasi' => $request->id_ref_jenis_sertifikasi,
                 'tanggal_awal_berlaku' => $request->tanggal_awal_berlaku,
                 'tanggal_akhir_berlaku' => $request->tanggal_akhir_berlaku,
                 'no_sertifikat' => $request->no_sertifikat

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Ubah Data</h1>
@@ -10,13 +10,12 @@
                     @method('put')
 					<div class="form-group my-3">
                         <label for="id_asesor">id asesor</label>
-                        <input type="number" class="form-control @error('id_asesor') is-invalid @enderror" id="id_asesor" name="id_asesor" placeholder="id asesor" value="{{$asesorjenissertifikasi->id_asesor}}">
+                        <select class="form-control @error('id_asesor') is-invalid @enderror" id="id_asesor" name="id_asesor">
+                            @foreach($asesor as $asesor)
+                                <option value="{{$asesor->id}}">{{$asesor->nama}}</option>
+                            @endforeach
+                        </select>
                         @error('id_asesor') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
-                    <div class="form-group my-3">
-                        <label for="id_ref_jenis_sertifikasi">id jenis sertifikasi</label>
-                        <input type="number" class="form-control @error('id_ref_jenis_sertifikasi') is-invalid @enderror" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi" placeholder="id jenis sertifikasi" value="{{$asesorjenissertifikasi->id_ref_jenis_sertifikasi}}">
-                        @error('id_ref_jenis_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="tanggal_awal_berlaku">Tanggal awal berlaku</label>

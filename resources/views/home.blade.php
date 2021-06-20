@@ -28,6 +28,7 @@
                     <h5 class="card-title">Daftar</h5>
                     <p class="card-text">Anda Sudah Terdaftar Sebagai Asesi</p>
                     <a href="{{ url('/index/ps') }}" class="btn bg-primary my-3">Daftar Sertifikasi</a>
+                    <a href="/dataasesi/{{$idasesi}}/edit" class="btn bg-primary">Edit Informasi Asesi</a>
                 </div>
                 </div>
             </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\jadwal;
 use App\Http\Controllers\Controller;
+use App\Models\penawaransertifikasi;
+use App\Models\refkegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Contracts\Permission;
@@ -33,7 +35,9 @@ class jadwalcontroller extends Controller
      */
     public function create()
     {
-        return view('create.jadwal');
+        $penawaran = penawaransertifikasi::all();
+        $kegiatan = refkegiatan::all();
+        return view('create.jadwal', compact('penawaran', 'kegiatan'));
     }
 
     /**
@@ -49,7 +53,6 @@ class jadwalcontroller extends Controller
                 'id_kegiatan' => 'required',
                 'tanggal_awal' => 'required',
                 'tanggal_akhir' => 'required',
-                'is_show' => 'required',
                 'deskripsi' => 'required'
         ]);
 
@@ -59,7 +62,6 @@ class jadwalcontroller extends Controller
                 'tanggal_awal' => $request->tanggal_awal,
                 'tanggal_akhir' => $request->tanggal_akhir,
                 'created_by' => Auth::user()->name,
-                'is_show' => $request->is_show,
                 'deskripsi' => $request->deskripsi
             ]);
 
@@ -85,7 +87,9 @@ class jadwalcontroller extends Controller
      */
     public function edit(jadwal $jadwal)
     {
-        return view('edit.jadwal', compact('jadwal'));
+        $penawaran = penawaransertifikasi::all();
+        $kegiatan = refkegiatan::all();
+        return view('edit.jadwal', compact('jadwal', 'penawaran', 'kegiatan'));
     }
 
     /**

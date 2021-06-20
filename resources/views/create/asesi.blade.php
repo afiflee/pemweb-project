@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
@@ -69,11 +69,17 @@
                     </div>
                     <div class="form-group my-3">
                         <label for="id_unit">Nomor Unit</label>
-                        <input type="number" class="form-control @error('id_unit') is-invalid @enderror" id="id_unit" name="id_unit" placeholder="nomor unit" value="{{old('id_unit')}}">
-                        @error('id_unit') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                        <select class="form-control @error('id_unit') is-invalid @enderror" name="id_unit" id="id_unit">
+                            @foreach($unit as $unit)
+                                <option value="{{$unit->id}}">{{$unit->nama}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    @hasrole('admin')
                     <a href="{{ url('/index/dataasesi') }}" class="btn bg-warning my-3">Lihat Data</a>
+                    @else
+                    @endhasrole
                     <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
                 </form>
             </div>

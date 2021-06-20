@@ -10,5 +10,8 @@ class syaratsertifikasi extends Model
     public $timestamps = false;
     protected $table = 'syarat_sertifikasi';
     protected $fillable = ['id_ref_jenis_sertifikasi', 'syarat', 'is_aktif'];
+    protected $attributes = [
+        'is_aktif' => 1
+    ];
     use HasFactory;
 }
