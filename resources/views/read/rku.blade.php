@@ -27,8 +27,8 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$rku -> pertanyaan}}</td>
                         <td>@if ($rku -> is_aktif == 1)
-                        Aktif 
-                        @else 
+                        Aktif
+                        @else
                         Tidak Aktif
                         @endif</td>
                         <td>
@@ -44,7 +44,7 @@
                 </tbody>
             </table>
                 <a href="{{ url('/index/rku') }}" class="btn bg-primary my-3">Tambah Data</a>
-                <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>
 @endsection
