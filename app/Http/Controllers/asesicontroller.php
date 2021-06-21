@@ -35,7 +35,7 @@ class asesicontroller extends Controller
      */
     public function create()
     {
-        $unit = unitkompetensisertifikasi::all();
+        $unit = refunitkompetensi::all();
         return view('create.asesi', compact('unit'));
     }
 
