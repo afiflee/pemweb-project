@@ -20,8 +20,7 @@
             }
         </style>
     </head>
-    <!-- BACKGROUND WELCOME SCREEN MAU TAK GANTI TAPI BENTAR -->
-    <body class="antialiased" style="background-image: url('https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2019/08/Blog_Inspirasi-Desain-Ruang-Kerja-Terbaik-untuk-Kerja-Lebih-Produktif.jpeg'); background-attachment: fixed; background-size: cover;">
+    <body class="antialiased" style="background-image: url('https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); background-attachment: fixed; background-size: cover;">
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
