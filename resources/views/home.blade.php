@@ -32,7 +32,7 @@
 
         <div class="row g-4">
         @hasrole('asesi')
-            <div class="col-12" style="margin: 40px">
+            <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h3 style="color: white">Silahkan pilih layanan</h3>
                     <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Anda Sebagai<span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAsesi&nbsp</span></h1>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Isi berkas Syarat</h5>
@@ -55,7 +55,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Isi Self Asesmen</h5>
@@ -64,7 +64,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(254,255,156)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Mengisi Kuesioner Kepuasan</h5>
@@ -77,7 +77,7 @@
         @endhasrole
         @hasanyrole('asesor|asesi|admin')
         @else
-            <div class="col-12" style="margin: 40px">
+            <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h3 style="color: white;">Belum memiliki role?</h3>
                     <h1 style="color: white; font-weight: bold; font-size: 60px">Daftarkan Diri<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAnda&nbsp</span></h1>
@@ -91,7 +91,7 @@
             </div>
         @endhasrole
         @hasrole('asesor')
-            <div class="col-12" style="margin: 40px">
+            <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h1 style="color: white; font-weight: bold; font-size: 60px">Anda Masuk Sebagai <span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAsesor&nbsp</span></h1>
                     <h3 style="color: white; margin-bottom: 20px">Klik tombol dibawah untuk verifikasi berkas Asesi</h3>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Verifikasi Instrumen</h5>
@@ -109,7 +109,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Menilai Hasil Ujian</h5>
@@ -124,7 +124,7 @@
         
         {{-- HEAD TITLENYA ADMIN --}}
         @hasrole('admin')
-            <div class="col-12" style="margin: 40px">
+            <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Selamat Datang Kembali<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAdmin&nbsp</span></h1>
                 </div>
@@ -132,7 +132,7 @@
         @endhasrole
         {{-- END OF HEAD TITLE --}}
 
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,101,163)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">List Sertifikasi</h5>
@@ -141,7 +141,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,247,64)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Jadwal Kegiatan</h5>
@@ -150,7 +150,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Penawaran</h5>
@@ -160,7 +160,7 @@
                 </div>
             </div>
         @hasrole('admin')
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Asesor</h5>
@@ -170,7 +170,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen jenis Bidang Sertifikasi Asesor</h5>
@@ -180,7 +180,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(254,255,156)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Penawaran Sertifikasi</h5>
@@ -190,7 +190,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,247,64)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Jadwal Kegiatan</h5>
@@ -202,7 +202,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,101,163)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Unit Kompetensi Sertifikasi</h5>
@@ -212,7 +212,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Referensi Unit</h5>
@@ -222,7 +222,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255))">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Syarat Sertifikasi</h5>
@@ -232,7 +232,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(254,255,156)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Instrumen Asesmen</h5>
@@ -242,7 +242,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(255,247,64)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Plotting Pendaftar dan Asesor</h5>
