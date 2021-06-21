@@ -42,7 +42,7 @@
                 </tbody>
             </table>
                 <a href="{{ url('/index/pk') }}" class="btn bg-primary my-3">Tambah Data</a>
-                <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                <a href="{{ url('/home') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
         </div>
     </div>
 @endsection

@@ -29,8 +29,8 @@
                         <td>{{$uks -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$uks -> id_ref_kompetensi}}</td>
                         <td>@if ($uks -> is_aktif == 1)
-                        Aktif 
-                        @else 
+                        Aktif
+                        @else
                         Tidak Aktif
                         @endif</td>
                         <td>
@@ -46,7 +46,7 @@
                 </tbody>
             </table>
                 <a href="{{ url('/index/uksertif') }}" class="btn bg-primary my-3">Tambah Data</a>
-                <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                <a href="{{ url('/home') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
         </div>
     </div>
 @endsection
