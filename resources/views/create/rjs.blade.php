@@ -5,6 +5,7 @@
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
+                <hr>
                 <form method="POST" action="/index/rjs">
                     @csrf
                     @if (session('status'))
@@ -22,10 +23,9 @@
                         <input type="text" class="form-control @error('status_jenis_sertifikasi') is-invalid @enderror" id="status_jenis_sertifikasi" name="status_jenis_sertifikasi" placeholder="Masukkan Status" value="{{old('status_jenis_sertifikasi')}}">
                         @error('status_jenis_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary">Tambah Data</button>
-                    <a href="{{ url('/index/datarjs') }}" class="btn bg-warning my-3">Lihat Data</a>
-                    <a href="{{ url('/index') }}" class="btn bg-danger my-3">kembali ke halaman tabel</a>
-					<a href="{{ url('/home') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                    <button type="submit" class="btn bg-primary" style="color: white">Tambah Data</button>
+                    <a href="{{ url('/index/datarjs') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
+                    <a href="{{ url('/index') }}" class="btn bg-success my-3" style="color: white">kembali ke halaman utama</a>
                 </form>
             </div>
         </div>

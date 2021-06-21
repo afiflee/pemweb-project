@@ -5,6 +5,7 @@
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
+                <hr>
                 <form method="POST" action="/index/asesi">
                     @csrf
                     @if (session('status'))
@@ -75,13 +76,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Tambah Data</button>
                     @hasrole('admin')
-                    <a href="{{ url('/index/dataasesi') }}" class="btn bg-warning my-3">Lihat Data</a>
+                    <a href="{{ url('/index/dataasesi') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
                     @else
                     @endhasrole
-                    <a href="{{ url('/index') }}" class="btn bg-danger my-3">kembali ke halaman tabel</a>
-					<a href="{{ url('/home') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                    <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">kembali ke halaman utama</a>
                 </form>
             </div>
         </div>
