@@ -24,8 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color:#8EDFFF ;font-size: 28px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                <a class="navbar-brand" href="{{ url('/home') }}" style="color:#8EDFFF ;font-size: 28px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
                     Sertifika.<span style="color: #B2FFFF">si</span>
                 </a>
                 @hasrole('admin')
