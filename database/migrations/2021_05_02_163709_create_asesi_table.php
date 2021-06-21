@@ -27,7 +27,7 @@ class CreateAsesiTable extends Migration
             $table->string('no_telpon');
             $table->string('email');
             $table->string('kualifikasi_pendidikan');
-            $table->string('id_unit')->constrained('ref_unit_kompetensi')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('id_unit')->constrained('unit_kompetensi_sertifikasi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('created_by');
             $table->timestamps();
             $table->string('edited_by');
