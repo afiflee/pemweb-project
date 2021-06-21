@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\pendaftarinstrumen;
+use App\Models\pendaftarkuesioner;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,10 +19,22 @@ class DatabaseSeeder extends Seeder
             rolesSeeder::class,
             userSeeder::class,
             refjenisSeeder::class,
+            asesorSeeder::class,
+            unitSeeder::class,
+            asesiSeeder::class,
             kegiatanSeeder::class,
             kuesionerSeeder::class,
-            unitSeeder::class,
             unitkompetensiSeeder::class,
+            syaratSeeder::class,
+            instrumenasesmenSeeder::class,
+            penawaranSeeder::class,
+            pendaftarSeeder::class,
+            pendaftarsyaratSeeder::class,
+            pendaftarinstrumenSeeder::class,
+            asesorsertifikasiSeeder::class,
+            asesorpendaftarSeeder::class,
+            jadwalSeeder::class,
+            pendaftarkuesionerSeeder::class
         ]);
     }
 }
