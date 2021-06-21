@@ -18,8 +18,10 @@
                         <th scope="col">#</th>
                         <th scope="col">syarat</th>
                         <th scope="col">path_bukti</th>
+                        <th scope="col">status verifikasi</th>
                         <th scope="col">verifikasi asesor</th>
                         <th scope="col">komentar asesor</th>
+                        <th scope="col">Hapus Syarat</th>
                         
                     </tr>
                 </thead>
@@ -29,8 +31,16 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$syaratanda -> syarat}}</td>
                         <td>{{$syaratanda -> path_bukti}}</td>
+                        <td>{{$syaratanda -> status_verifikasi_syarat}}</td>
                         <td>{{$syaratanda -> verifikasi_asesor}}</td>
                         <td>{{$syaratanda -> komentar_asesor}}</td>
+                        <td>
+                        <form action="/datapsy/{{$syaratanda->id}}" method="POST" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn bg-danger">Delete</button>
+                        </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

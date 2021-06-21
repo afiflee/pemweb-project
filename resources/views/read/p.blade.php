@@ -19,7 +19,7 @@
                         <th scope="col">id penawaran</th>
                         <th scope="col">id asesi</th>
                         <th scope="col">status akhir</th>
-                        <th scope="col">tanggal_status_akhir</th>
+                        <th scope="col">tanggal status akhir</th>
                         <th scope="col">status pendaftaran</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -45,7 +45,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/p') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

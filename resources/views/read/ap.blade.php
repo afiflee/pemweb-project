@@ -41,7 +41,9 @@
                     @endforeach
                 </tbody>
             </table>
+                @hasrole('admin')
                 <a href="{{ url('/index/ap') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

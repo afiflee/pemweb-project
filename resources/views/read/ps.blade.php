@@ -16,13 +16,10 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id_ref_jenis_sertifikasi</th>
                         <th scope="col">deskripsi_penawaran</th>
                         <th scope="col">periode</th>
-                        <th scope="col">created_by</th>
                         <th scope="col">created_at</th>
                         <th scope="col">updated_at</th>
-                        <th scope="col">edited_by</th>
                         <th scope="col">aktif</th>
                         <th scope="col">aksi</th>
                     </tr>
@@ -31,13 +28,10 @@
                     @foreach($ps as $ps)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
-                        <td>{{$ps -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ps -> deskripsi_penawaran}}</td>
                         <td>{{$ps -> periode}}</td>
-                        <td>{{$ps -> created_by}}</td>
                         <td>{{$ps -> created_at}}</td>
                         <td>{{$ps -> updated_at}}</td>
-                        <td>{{$ps -> edited_by}}</td>
                         <td>@if ($ps -> is_aktif == 1)
                         Aktif
                         @else
@@ -55,7 +49,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/ps') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

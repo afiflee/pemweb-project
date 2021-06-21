@@ -32,7 +32,9 @@
                         @error('id_ref_kompetensi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <button type="submit" class="btn bg-primary my-3" style="color: white">Tambah Data</button>
+                    @hasrole('admin')
                     <a href="{{ url('/index/datauksertif') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
+                    @endhasrole
                     <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
                 </form>
             </div>

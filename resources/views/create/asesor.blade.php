@@ -18,7 +18,7 @@
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="masukkan nama lengkap" value="{{old('nama')}}">
                         @error('nama') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    {{-- <div class="form-group my-3">
+                    <div class="form-group my-3">
                         <label for="nim">NIM</label>
                         <input type="text" class="form-control  @error('nim') is-invalid @enderror" id="nim" name="nim" placeholder="masukkan NIM" value="{{old('nim')}}">
                         @error('nim') <div class="invalid-feedback"> {{$message}} </div> @enderror
@@ -57,9 +57,11 @@
                         <label for="email">Email</label>
                         <input type="email" class="form-control  @error('email') is-invalid @enderror" id="email" name="email" placeholder="masukkan email" value="{{old('email')}}">
                         @error('email') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div> --}}
+                    </div>
                     <button type="submit" class="btn bg-primary" style="color: white">Tambah Data</button>
+                    @hasrole('admin')
                     <a href="{{ url('/index/dataasesor') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
+                    @endhasrole
                     <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
                 </form>
             </div>

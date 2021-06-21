@@ -20,7 +20,7 @@ class pendaftarsyaratSeeder extends Seeder
                 array(
                     'id_syarat_sertifikasi' => 1,
                     'id_pendaftar' => 1,
-                    'status_verifikasi_syarat' => 'aktif',
+                    'status_verifikasi_syarat' => 'belum aktif',
                     'path_bukti' => 'path', 
                     'verifikasi_asesor' => 'belum terverifikasi',
                     'komentar_asesor' => 'belum ada komentar',
