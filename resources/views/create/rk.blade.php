@@ -24,7 +24,8 @@
                     </div>
                     <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
                     <a href="{{ url('/index/datark') }}" class="btn bg-warning my-3 d-inline">Lihat Data</a>
-                    <a href="{{ url('/index') }}" class="btn bg-success my-3 d-inline">kembali ke halaman utama</a>
+                    <a href="{{ url('/index') }}" class="btn bg-danger my-3">kembali ke halaman tabel</a>
+					<a href="{{ url('/home') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
                 </form>
             </div>
         </div>

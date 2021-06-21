@@ -11,6 +11,8 @@ class asesorcontroller extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(['role:admin'])->only('index', 'edit', 'update', 'destroy');
+        $this->middleware(['role:asesor'])->only('edit', 'update');
     }
 
     /**
