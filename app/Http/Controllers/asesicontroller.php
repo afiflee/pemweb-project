@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\asesi;
 use App\Http\Controllers\Controller;
 use App\Models\refunitkompetensi;
+use App\Models\unitkompetensisertifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,7 @@ class asesicontroller extends Controller
      */
     public function create()
     {
-        $unit = refunitkompetensi::all();
+        $unit = unitkompetensisertifikasi::all();
         return view('create.asesi', compact('unit'));
     }
 
@@ -148,7 +149,7 @@ class asesicontroller extends Controller
             'edited_by' => Auth::user()->name,
             'id_user' => Auth::user()->id
         ]);
-    return redirect('/index/dataasesi')->with('status', 'data berhasil diubah');
+    return redirect('/home')->with('status', 'Informasi anda berhasil diperbarui!');
     }
 
     /**
