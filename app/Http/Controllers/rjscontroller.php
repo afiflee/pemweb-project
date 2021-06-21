@@ -43,18 +43,9 @@ class rjscontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $refjenissertif = new refjenissertifikasi;
-        // $refjenissertif->nama = $request->nama;
-        // $refjenissertif->status_jenis_sertifikasi = $request->status_jenis_sertifikasi;
-        // $refjenissertif->created_by = $request->created_by;
-        // $refjenissertif->edited_by = $request->edited_by;
-        // $refjenissertif->is_aktif = $request->is_aktif;
-        // $refjenissertif->save();
-
         $request->validate([
             'nama' => 'required',
             'status_jenis_sertifikasi' => 'required',
-            'is_aktif' => 'required',
         ]);
 
         refjenissertifikasi::create([
@@ -62,7 +53,7 @@ class rjscontroller extends Controller
             'status_jenis_sertifikasi' => $request->status_jenis_sertifikasi,
             'created_by' => Auth::user()->name,
             'edited_by' => Auth::user()->name,
-            'is_aktif' => $request->is_aktif
+            // 'is_aktif' => $request->is_aktif
         ]);
         
         // refjenissertifikasi::create($request->all());

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>ref kuesioner</h1>
@@ -26,7 +26,11 @@
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$rku -> pertanyaan}}</td>
-                        <td>{{$rku -> is_aktif}}</td>
+                        <td>@if ($rku -> is_aktif == 1)
+                        Aktif 
+                        @else 
+                        Tidak Aktif
+                        @endif</td>
                         <td>
                         <a href="/datarku/{{$rku->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datarku/{{$rku->id}}" method="POST" class="d-inline">

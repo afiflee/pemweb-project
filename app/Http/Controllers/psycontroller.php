@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\pendaftarsyarat;
 use App\Http\Controllers\Controller;
+use App\Models\syaratsertifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class psycontroller extends Controller
 {
@@ -32,7 +34,8 @@ class psycontroller extends Controller
      */
     public function create()
     {
-        return view('create.psy');
+        $syarat = syaratsertifikasi::all();
+        return view('create.psy', compact('syarat'));
     }
 
     /**
@@ -45,24 +48,27 @@ class psycontroller extends Controller
     {
         $request->validate([
             'id_syarat_sertifikasi' => 'required',
-            'id_pendaftar' => 'required',
             'status_verifikasi_syarat' => 'required',
             'path_bukti' => 'required',
-            'verifikasi_asesor' => 'required',
-            'komentar_asesor' => 'required',
-            'verified_by' => 'required',
-            'verified_at' => 'required',
         ]);
+
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+
+        $idpendaftar = DB::table('pendaftar')
+        ->join('asesi', 'pendaftar.id_asesi', '=', 'asesi.id')
+        ->where('asesi.id', $idasesi)
+        ->value('pendaftar.id');
 
         pendaftarsyarat::create([
                 'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
-                'id_pendaftar' => $request->id_pendaftar,
+                'id_pendaftar' => $idpendaftar,
                 'status_verifikasi_syarat' => $request->status_verifikasi_syarat,
                 'path_bukti' => $request->path_bukti,
-                'verifikasi_asesor' => $request->verifikasi_asesor,
-                'komentar_asesor' => $request->komentar_asesor,
-                'verified_by' => $request->verified_by,
-                'verified_at' => $request->verified_at,
+                'verified_by' => Auth::user()->name,
+                'verified_at' => now(),
                 'created_by' => Auth::user()->name,
                 'edited_by' => Auth::user()->name
             ]);
@@ -102,26 +108,20 @@ class psycontroller extends Controller
     public function update(Request $request, pendaftarsyarat $pendaftarsyarat)
     {
         $request->validate([
-            'id_syarat_sertifikasi' => 'required',
-            'id_pendaftar' => 'required',
             'status_verifikasi_syarat' => 'required',
             'path_bukti' => 'required',
             'verifikasi_asesor' => 'required',
             'komentar_asesor' => 'required',
-            'verified_by' => 'required',
-            'verified_at' => 'required'
         ]);
         
         pendaftarsyarat::where('id', $pendaftarsyarat->id)
             ->update([
-                'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
-                'id_pendaftar' => $request->id_pendaftar,
                 'status_verifikasi_syarat' => $request->status_verifikasi_syarat,
                 'path_bukti' => $request->path_bukti,
                 'verifikasi_asesor' => $request->verifikasi_asesor,
                 'komentar_asesor' => $request->komentar_asesor,
-                'verified_by' => $request->verified_by,
-                'verified_at' => $request->verified_at,
+                'verified_by' => Auth::user()->name,
+                'verified_at' => now(),
                 'edited_by' => Auth::user()->name
             ]);
             return redirect('/index/datapsy')->with('status', 'data berhasil diubah');

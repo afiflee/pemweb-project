@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\pendaftar;
 use App\Http\Controllers\Controller;
+use App\Models\penawaransertifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class pcontroller extends Controller
 {
@@ -32,7 +34,9 @@ class pcontroller extends Controller
      */
     public function create()
     {
-        return view('create.p');
+        
+        $penawaran = penawaransertifikasi::all();
+        return view('create.p', compact('penawaran'));
     }
 
     /**
@@ -43,17 +47,22 @@ class pcontroller extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
                 'id_penawaran_sertifikasi' => 'required',
-                'id_asesi' => 'required',
                 'status_akhir_sertifikasi' => 'required',
                 'tanggal_status_akhir' => 'required',
                 'status_pendaftaran' => 'required'
         ]);
 
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+
         pendaftar::create([
                 'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
-                'id_asesi' => $request->id_asesi,
+                'id_asesi' => $idasesi,
                 'status_akhir_sertifikasi' => $request->status_akhir_sertifikasi,
                 'tanggal_status_akhir' => $request->tanggal_status_akhir,
                 'created_by' => Auth::user()->name,
@@ -96,8 +105,6 @@ class pcontroller extends Controller
     public function update(Request $request, pendaftar $pendaftar)
     {
         $request->validate([
-            'id_penawaran_sertifikasi' => 'required',
-            'id_asesi' => 'required',
             'status_akhir_sertifikasi' => 'required',
             'tanggal_status_akhir' => 'required',
             'status_pendaftaran' => 'required'
@@ -105,8 +112,6 @@ class pcontroller extends Controller
     
         pendaftar::where('id', $pendaftar->id)
             ->update([
-                'id_penawaran_sertifikasi' => $request->id_penawaran_sertifikasi,
-                'id_asesi' => $request->id_asesi,
                 'status_akhir_sertifikasi' => $request->status_akhir_sertifikasi,
                 'tanggal_status_akhir' => $request->tanggal_status_akhir,
                 'edited_by' => Auth::user()->name,

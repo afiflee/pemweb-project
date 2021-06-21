@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\penawaransertifikasi;
 use App\Http\Controllers\Controller;
+use App\Models\refjenissertifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,7 +33,8 @@ class pscontroller extends Controller
      */
     public function create()
     {
-        return view('create.ps');
+        $jenis = refjenissertifikasi::all();
+        return view('create.ps', compact('jenis'));
     }
 
     /**
@@ -47,7 +49,6 @@ class pscontroller extends Controller
             'id_ref_jenis_sertifikasi' => 'required',
             'deskripsi_penawaran' => 'required',
             'periode' => 'required',
-            'is_aktif' => 'required'
         ]);
 
         penawaransertifikasi::create([
@@ -56,7 +57,6 @@ class pscontroller extends Controller
             'periode' => $request->periode,
             'created_by' => Auth::user()->name,
             'edited_by' => Auth::user()->name,
-            'is_aktif' => $request->is_aktif
         ]);
 
 		return redirect('/index/ps')->with('status', 'data berhasil masuk');
@@ -81,7 +81,8 @@ class pscontroller extends Controller
      */
     public function edit(penawaransertifikasi $penawaransertifikasi)
     {
-        return view('edit.ps', compact('penawaransertifikasi'));
+        $jenis = refjenissertifikasi::all();
+        return view('edit.ps', compact('penawaransertifikasi', 'jenis'));
     }
 
     /**

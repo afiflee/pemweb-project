@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\instrumenasesmenkompetensi;
 use App\Http\Controllers\Controller;
+use App\Models\refunitkompetensi;
 use Illuminate\Http\Request;
 
 class iakcontroller extends Controller
@@ -31,7 +32,8 @@ class iakcontroller extends Controller
      */
     public function create()
     {
-        return view('create.iak');
+        $unit = refunitkompetensi::all();
+        return view('create.iak', compact('unit'));
     }
 
     /**
@@ -46,7 +48,6 @@ class iakcontroller extends Controller
             'id_ref_unit_kompetensi' => 'required',
             'instrumen_pertanyaan' => 'required',
             'status_instrumen' => 'required',
-            'is_aktif' => 'required' 
         ]);
 
         instrumenasesmenkompetensi::create($request->all());
@@ -73,7 +74,8 @@ class iakcontroller extends Controller
      */
     public function edit(instrumenasesmenkompetensi $instrumenasesmenkompetensi)
     {
-        return view('edit.iak', compact('instrumenasesmenkompetensi'));
+        $unit = refunitkompetensi::all();
+        return view('edit.iak', compact('instrumenasesmenkompetensi', 'unit'));
     }
 
     /**

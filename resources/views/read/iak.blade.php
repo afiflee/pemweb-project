@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>instrumen asesmen kompetensi</h1>
@@ -30,7 +30,11 @@
                         <td>{{$iak -> id_ref_unit_kompetensi}}</td>
                         <td>{{$iak -> instrumen_pertanyaan}}</td>
                         <td>{{$iak -> status_instrumen}}</td>
-                        <td>{{$iak -> is_aktif}}</td>
+                        <td>@if ($iak -> is_aktif == 1)
+                        Aktif 
+                        @else 
+                        Tidak Aktif
+                        @endif</td>
                         <td>
                         <a href="/dataiak/{{$iak->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/dataiak/{{$iak->id}}" method="POST" class="d-inline">

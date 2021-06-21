@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\unitkompetensisertifikasi;
 use App\Http\Controllers\Controller;
+use App\Models\refjenissertifikasi;
+use App\Models\refunitkompetensi;
 use Illuminate\Http\Request;
 
 class uksertifcontroller extends Controller
@@ -31,7 +33,9 @@ class uksertifcontroller extends Controller
      */
     public function create()
     {
-        return view('create.uksertif');
+        $unit = refunitkompetensi::all();
+        $jenis = refjenissertifikasi::all();
+        return view('create.uksertif', compact('unit', 'jenis'));
     }
 
     /**
@@ -45,7 +49,6 @@ class uksertifcontroller extends Controller
         $request->validate([
                 'id_ref_jenis_sertifikasi' => 'required',
                 'id_ref_kompetensi' => 'required',
-                'is_aktif' => 'required'
         ]);
         
         unitkompetensisertifikasi::create($request->all());
@@ -72,7 +75,9 @@ class uksertifcontroller extends Controller
      */
     public function edit(unitkompetensisertifikasi $unitkompetensisertifikasi)
     {
-        return view('edit.uksertif', compact('unitkompetensisertifikasi'));
+        $unit = refunitkompetensi::all();
+        $jenis = refjenissertifikasi::all();
+        return view('edit.uksertif', compact('unitkompetensisertifikasi', 'unit', 'jenis'));
     }
 
     /**

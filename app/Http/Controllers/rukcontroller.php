@@ -44,7 +44,6 @@ class rukcontroller extends Controller
     {
         $request->validate([
             'nama'=>'required',
-            'is_aktif'=>'required'
         ]);
 
         refunitkompetensi::create($request->all());

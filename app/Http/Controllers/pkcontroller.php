@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\pendaftarkuesioner;
 use App\Http\Controllers\Controller;
+use App\Models\refkuesioner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class pkcontroller extends Controller
 {
@@ -32,7 +34,8 @@ class pkcontroller extends Controller
      */
     public function create()
     {
-        return view('create.pk');
+        $kuesioner = refkuesioner::all();
+        return view('create.pk', compact('kuesioner'));
     }
 
     /**
@@ -44,13 +47,22 @@ class pkcontroller extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'id_pendaftar' => 'required',
                 'id_kuesioner' => 'required',
                 'jawaban' => 'required'
         ]);
 
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+
+        $idpendaftar = DB::table('pendaftar')
+        ->join('asesi', 'pendaftar.id_asesi', '=', 'asesi.id')
+        ->where('asesi.id', $idasesi)
+        ->value('pendaftar.id');
+
         pendaftarkuesioner::create([
-                'id_pendaftar' => $request->id_pendaftar,
+                'id_pendaftar' => $idpendaftar,
                 'id_kuesioner' => $request->id_kuesioner,
                 'jawaban' => $request->jawaban,
                 'created_by' => Auth::user()->name,
@@ -79,7 +91,8 @@ class pkcontroller extends Controller
      */
     public function edit(pendaftarkuesioner $pendaftarkuesioner)
     {
-        return view('edit.pk', compact('pendaftarkuesioner'));
+        $kuesioner = refkuesioner::all();
+        return view('edit.pk', compact('pendaftarkuesioner', 'kuesioner'));
     }
 
     /**
@@ -92,14 +105,12 @@ class pkcontroller extends Controller
     public function update(Request $request, pendaftarkuesioner $pendaftarkuesioner)
     {
         $request->validate([
-            'id_pendaftar' => 'required',
             'id_kuesioner' => 'required',
             'jawaban' => 'required'
         ]);
         
         pendaftarkuesioner::where('id', $pendaftarkuesioner->id)
             ->update([
-                'id_pendaftar' => $request->id_pendaftar,
                 'id_kuesioner' => $request->id_kuesioner,
                 'jawaban' => $request->jawaban,
                 'edited_by' => Auth::user()->name

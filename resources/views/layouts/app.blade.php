@@ -19,6 +19,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+    body{
+        background-image: url('https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2019/08/Blog_Inspirasi-Desain-Ruang-Kerja-Terbaik-untuk-Kerja-Lebih-Produktif.jpeg'); 
+        background-attachment: fixed; 
+        background-size: cover; 
+        margin-top: 68px
+    }
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -29,7 +38,7 @@
                 </a>
                 @hasrole('admin')
                 <a class="navbar-brand" href="{{ url('/index') }}">
-                    onClickTabel
+                    Tabel
                 </a>
                 @else
                 @endhasrole
@@ -82,7 +91,7 @@
             </div>
         </nav>
 
-        <main class="py-4" style="background-image: url('https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2019/08/Blog_Inspirasi-Desain-Ruang-Kerja-Terbaik-untuk-Kerja-Lebih-Produktif.jpeg'); background-attachment: fixed; background-size: cover; margin-top: 68px">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>

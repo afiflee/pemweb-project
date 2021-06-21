@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
             <h1>unit kompetensi sertifikasi</h1>
@@ -28,7 +28,11 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$uks -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$uks -> id_ref_kompetensi}}</td>
-                        <td>{{$uks -> is_aktif}}</td>
+                        <td>@if ($uks -> is_aktif == 1)
+                        Aktif 
+                        @else 
+                        Tidak Aktif
+                        @endif</td>
                         <td>
                         <a href="/datauksertif/{{$uks->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datauksertif/{{$uks->id}}" method="POST" class="d-inline">

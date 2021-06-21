@@ -10,5 +10,8 @@ class refunitkompetensi extends Model
     public $timestamps = false;
     protected  $table = 'ref_unit_kompetensi';
     protected $fillable = ['nama', 'is_aktif'];
+    protected $attributes = [
+        'is_aktif' => 1
+    ];
     use HasFactory;
 }
