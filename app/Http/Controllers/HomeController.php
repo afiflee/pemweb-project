@@ -42,4 +42,32 @@ class HomeController extends Controller
     {
         return view('index');
     }
+
+    public function jadwalrk(){
+        $jadwalrksertifikasi = DB::table('jadwal as j')
+                            ->join('ref_kegiatan as rk', 'j.id_kegiatan', '=', 'rk.id')
+                            ->join('penawaran_sertifikasi as ps', 'j.id_penawaran_sertifikasi', '=', 'ps.id')
+                            ->get();
+
+        return view('jadwalrk', compact('jadwalrksertifikasi'));
+    }
+
+    public function syaratanda(){
+        $idasesi = DB::table('asesi')
+                    ->join('users', 'asesi.id_user', '=', 'users.id')
+                    ->where('users.id', Auth::user()->id)
+                    ->value('asesi.id');
+
+        $idpendaftar = DB::table('pendaftar')
+                    ->join('asesi', 'pendaftar.id_asesi', '=', 'asesi.id')
+                    ->where('asesi.id', $idasesi)
+                    ->value('pendaftar.id');
+
+        $syaratanda = DB::table('pendaftar_syarat as psy')
+                    ->join('syarat_sertifikasi as ss', 'psy.id_syarat_sertifikasi', '=', 'ss.id')
+                    ->where('psy.id_pendaftar', $idpendaftar)
+                    ->get();
+
+        return view('syaratanda', compact('syaratanda'));
+    }
 }

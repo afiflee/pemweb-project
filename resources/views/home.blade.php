@@ -223,7 +223,7 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card" style="border-radius: 0;background-color: rgb(122,252,255))">
+                <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Syarat Sertifikasi</h5>
                     <p class="card-text">Manage data terkait syarat sertifikasi</p>
