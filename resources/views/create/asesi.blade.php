@@ -72,7 +72,7 @@
                         <label for="id_unit">Nomor Unit</label>
                         <select class="form-control @error('id_unit') is-invalid @enderror" name="id_unit" id="id_unit">
                             @foreach($unit as $unit)
-                                <option value="{{$unit->id}}">{{$unit->nama}}</option>
+                                <option value="{{$unit->id}}">{{$unit->id}}</option>
                             @endforeach
                         </select>
                     </div>
