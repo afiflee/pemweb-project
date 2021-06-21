@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>ref jenis Sertifikasi</h1>
+            <h1>Sertifikasi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -18,10 +18,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Nama</th>
                         <th scope="col">status</th>
-                        <th scope="col">created_by</th>
-                        <th scope="col">created_at</th>
-                        <th scope="col">edited_by</th>
-                        <th scope="col">edited_at</th>
                         <th scope="col">aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -32,10 +28,6 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$rjs -> nama}}</td>
                         <td>{{$rjs -> status_jenis_sertifikasi}}</td>
-                        <td>{{$rjs -> created_by}}</td>
-                        <td>{{$rjs -> created_at}}</td>
-                        <td>{{$rjs -> edited_by}}</td>
-                        <td>{{$rjs -> updated_at}}</td>
                         <td>
                         <!-- {{$rjs -> is_aktif}} -->
                         @if ($rjs -> is_aktif == 1)
@@ -56,7 +48,9 @@
                     @endforeach
                 </tbody>
             </table>
+                @hasrole('admin')
                 <a href="{{ url('/index/rjs') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

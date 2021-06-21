@@ -16,8 +16,8 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id_pendaftar</th>
-                        <th scope="col">id_kuesioner</th>
+                        <th scope="col">id pendaftar</th>
+                        <th scope="col">id kuesioner</th>
                         <th scope="col">jawaban</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -41,7 +41,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/pk') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

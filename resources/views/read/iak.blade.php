@@ -16,9 +16,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id_ref_unit_kompetensi</th>
-                        <th scope="col">instrumen_pertanyaan</th>
-                        <th scope="col">status_instrumen</th>
+                        <th scope="col">id ref unit</th>
+                        <th scope="col">instrumen pertanyaan</th>
+                        <th scope="col">status instrumen</th>
                         <th scope="col">aktif</th>
                         <th scope="col">aksi</th>
                     </tr>
@@ -47,7 +47,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/iak') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

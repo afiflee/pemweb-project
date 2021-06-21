@@ -42,6 +42,9 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'tabel']);
 Route::get('/jadwalrk', [HomeController::class, 'jadwalrk']);
 Route::get('/syaratanda', [HomeController::class, 'syaratanda']);
+Route::get('/penawaran', [HomeController::class, 'penawaran']);
+Route::get('/hasil', [HomeController::class, 'hasil']);
+Route::get('/asesmen', [HomeController::class, 'asesmen']);
 
 //tabel ref_jenis_sertifikasi
 Route::get('/index/rjs', [rjscontroller::class, 'create']);

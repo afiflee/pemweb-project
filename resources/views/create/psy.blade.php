@@ -23,18 +23,15 @@
                         @error('id_syarat_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="status_verifikasi_syarat">status verifikasi syarat</label>
-                        <input type="text" class="form-control @error('status_verifikasi_syarat') is-invalid @enderror" id="status_verifikasi_syarat" name="status_verifikasi_syarat" placeholder="Masukkan status verifikasi" value="{{old('status_verifikasi_syarat')}}">
-                        @error('status_verifikasi_syarat') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
-                    <div class="form-group my-3">
                         <label for="path_bukti">path_bukti</label>
                         <input type="text" class="form-control @error('path_bukti') is-invalid @enderror" id="path_bukti" name="path_bukti" placeholder="Masukkan path bukti" value="{{old('path_bukti')}}">
                         @error('path_bukti') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <button type="submit" class="btn bg-primary my-3" style="color: white">Tambah Data</button>
+                    @hasrole('admin')
                     <a href="{{ url('/index/datapsy') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
-					<a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
+					@endhasrole
+                    <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
 				</form>
             </div>
         </div>
