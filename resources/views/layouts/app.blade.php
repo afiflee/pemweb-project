@@ -26,6 +26,9 @@
         background-size: cover; 
         margin-top: 68px
     }
+    button{
+        color: white
+    }
     </style>
 
 </head>
