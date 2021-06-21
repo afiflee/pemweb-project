@@ -40,6 +40,8 @@ Auth::routes();
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'tabel']);
+Route::get('/jadwalrk', [HomeController::class, 'jadwalrk']);
+Route::get('/syaratanda', [HomeController::class, 'syaratanda']);
 
 //tabel ref_jenis_sertifikasi
 Route::get('/index/rjs', [rjscontroller::class, 'create']);

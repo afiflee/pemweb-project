@@ -73,7 +73,7 @@ class psycontroller extends Controller
                 'edited_by' => Auth::user()->name
             ]);
 
-		return redirect('/index/psy')->with('status', 'data berhasil masuk');
+		return redirect('/syaratanda')->with('status', 'Anda berhasil menambahkan berkas');
     }
 
     /**
