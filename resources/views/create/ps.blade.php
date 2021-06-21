@@ -5,6 +5,7 @@
         <div class="row "> <!--justify-content-center-->
             <div class="col-6">
                 <h1 class="mt-3">Tambah Data</h1>
+                <hr>
                 <form method="POST" action="/index/ps">
                     @csrf
                     @if (session('status'))
@@ -31,9 +32,9 @@
                         <input type="number" class="form-control @error('periode') is-invalid @enderror" id="periode" name="periode" placeholder="masukkan periode" pattern="[0-9]{4}" value="{{old('periode')}}">
                         @error('periode') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Tambah Data</button>
-                    <a href="{{ url('/index/dataps') }}" class="btn bg-warning my-3">Lihat Data</a>
-                    <a href="{{ url('/index') }}" class="btn bg-success my-3">kembali ke halaman utama</a>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Tambah Data</button>
+                    <a href="{{ url('/index/dataps') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
+                    <a href="{{ url('/index') }}" class="btn bg-success my-3" style="color: white">kembali ke halaman utama</a>
                 </form>
             </div>
         </div>
