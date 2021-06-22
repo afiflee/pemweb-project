@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">&nbsp;</th>
                         <th scope="col">Kegiatan</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Penawaran</th>

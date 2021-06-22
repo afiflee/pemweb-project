@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">&nbsp;</th>
                         <th scope="col">Syarat</th>
                         <th scope="col">Path Bukti</th>
                         <th scope="col">Status Verifikasi</th>

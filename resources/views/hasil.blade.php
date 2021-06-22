@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">&nbsp;</th>
                         <th scope="col">Sertifikasi</th>
                         <th scope="col">Hasil</th>
                     </tr>

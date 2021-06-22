@@ -44,7 +44,7 @@
                                     &nbsp Sertifika.<span style="color: #B2FFFF">si &nbsp</span>
                                 </a>
                                 <h3 class="flex justify-center">Trusted sertification.</h3>
-                                <p class="flex justify-center" style="color: gray">You are logged in</p>
+                                <p class="flex justify-center" style="color: gray">You are logged in, click on logo above</p>
                             @else
                                 <a class="navbar-brand" href="{{ route('login') }}" style="color:#8EDFFF ;font-size: 64px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px; background-color: white">
                                     &nbsp Sertifika.<span style="color: #B2FFFF">si &nbsp</span>
