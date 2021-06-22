@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">&nbsp;</th>
                         <th scope="col">nama sertifikasi</th>
                         <th scope="col">hasil</th>
                         
@@ -31,7 +31,7 @@
                     @endforeach
                 </tbody>
             </table>
-                <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
+                <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
 
     </div>
 @endsection

@@ -28,7 +28,7 @@
                         <textarea type="text" class="form-control @error('komentar_asesor') is-invalid @enderror" id="komentar_asesor" name="komentar_asesor" placeholder="komentar asesor">{{$pendaftarsyarat->komentar_asesor}}</textarea>
                         @error('komentar_asesor') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Ubah Data</button>
 				</form>
             </div>
         </div>

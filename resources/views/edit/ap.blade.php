@@ -31,7 +31,7 @@
                         <input type="text" class="form-control @error('hasil') is-invalid @enderror" id="hasil" name="hasil" placeholder="masukkan hasil" value="{{$asesorpendaftar -> hasil}}">
                         @error('hasil') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Ubah Data</button>
 				</form>
             </div>
         </div>

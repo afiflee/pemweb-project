@@ -5,13 +5,8 @@
     @if (session('status')) 
     <div class="row justify-content-center">
         <div class="col-md-12">
-            {{-- <div class="card"> --}}
-            <div class="card">
-                <div class="card-body">
-                        <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" role="alert">
                             {{ session('status') }}
-                        </div>
-                </div>
             </div>
         </div>
         @endif
@@ -21,7 +16,7 @@
             <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h3 style="color: white">Silahkan pilih layanan</h3>
-                    <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Anda Sebagai<span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAsesi&nbsp</span></h1>
+                    <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Anda Sebagai<span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbsp;Asesi&nbsp;</span></h1>
                     <div>
                         <a href="{{ url('/index/p') }}" class="btn btn-outline-light btn-lg rounded-pill" style="margin: 5px 0px">Daftar Sertifikasi</a>
                         &NonBreakingSpace;
@@ -34,7 +29,7 @@
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Isi berkas Syarat</h5>
-                    <p class="card-text">Isi berkas-berkas syarat yang diperlukan untuk sertifikasi yang anda daftar.</p>
+                    <p class="card-text">Isi berkas-berkas syarat yang diperlukan untuk sertifikasi yang Anda daftar.</p>
                     <a href="{{ url('/index/psy') }}" class="btn btn-outline-dark my-1">Isi berkas</a>
                     <a href="{{ url('/syaratanda') }}" class="btn btn-outline-dark my-1">List berkas anda</a>
                     <a href="{{ url('/index/datass') }}" class="btn btn-outline-dark my-1">List Syarat</a>
@@ -45,7 +40,7 @@
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Isi Self Asesmen</h5>
-                    <p class="card-text">Self asesmen</p>
+                    <p class="card-text">Isi self asesmen Anda agar Asesor tau seberapa bagusnya diri Anda</p>
                     <a href="{{ url('/index/pi') }}" class="btn btn-outline-dark my-1">Isi Self asesmen</a>
                     <a href="{{ url('/asesmen') }}" class="btn btn-outline-dark my-1">Self asesmen</a>
                 </div>
@@ -55,7 +50,7 @@
                 <div class="card" style="border-radius: 0;background-color: rgb(254,255,156)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Mengisi Kuesioner Kepuasan</h5>
-                    <p class="card-text">Isi kuesioner-kuesioner yang berkaitan dengan layanan sertifikasi kami</p>
+                    <p class="card-text">Ingin memberi kritik, saran, atau nilai kepuasan yang berkaitan dengan layanan sertifikasi kami? Isi kuesionernya disini</p>
                     <a href="{{ url('/index/pk') }}" class="btn btn-outline-dark my-1">Isi Kuesioner</a>
                     <a href="{{ url('/index/datarku') }}" class="btn btn-outline-dark my-1">List Kuesioner</a>
                 </div>
@@ -64,8 +59,8 @@
             <div class="col-md-4">
                 <div class="card" style="border-radius: 0;background-color: rgb(254,255,156)">
                 <div class="card-body">
-                    <h5 class="card-title" style="border-bottom: solid 1px black">Lihat hasil sertifikasi anda</h5>
-                    <p class="card-text">Hasil dari ujian sertifikasi yang telah anda ikuti</p>
+                    <h5 class="card-title" style="border-bottom: solid 1px black">Lihat hasil sertifikasi</h5>
+                    <p class="card-text">Hasil dari ujian sertifikasi yang telah Anda ikuti</p>
                     <a href="{{ url('/hasil') }}" class="btn btn-outline-dark my-1">Hasil Sertifikasi</a>
                 </div>
                 </div>
@@ -76,7 +71,7 @@
             <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
                     <h3 style="color: white;">Belum memiliki role?</h3>
-                    <h1 style="color: white; font-weight: bold; font-size: 60px">Daftarkan Diri<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAnda&nbsp</span></h1>
+                    <h1 style="color: white; font-weight: bold; font-size: 60px">Daftarkan Diri<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbsp;Anda&nbsp;</span></h1>
                     <div>
                         <a href="{{ url('/index/asesi') }}" class="btn btn-outline-light btn-lg rounded-pill" style="margin: 5px 0px">Daftar sebagai Asesi</a>
                         &NonBreakingSpace;
@@ -109,7 +104,7 @@
                 <div class="card" style="border-radius: 0;background-color: rgb(122,252,255)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Menilai Hasil Ujian</h5>
-                    <p class="card-text">Berikan nilai hasil ujian untuk para asesi yang telah mengikuti ujian</p>
+                    <p class="card-text">Berikan nilai hasil ujian untuk para Asesi yang telah mengikuti ujian</p>
                     <a href="{{ url('/index/datapi') }}" class="btn btn-outline-dark my-1">Beri Nilai</a>
                     <a href="{{ url('/index/dataajs') }}" class="btn btn-outline-dark my-1">List Asesor Jenis Sertifikasi</a>
                     <a href="{{ url('/index/datap') }}" class="btn btn-outline-dark my-1">List Pendaftar</a>
@@ -122,7 +117,7 @@
         @hasrole('admin')
             <div class="col-12" style="margin: 40px 0px 80px 0px">
                 <div style="font-family: Arial, Helvetica, sans-serif; text-shadow: 0 0 0.5px black">
-                    <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Selamat Datang Kembali<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbspAdmin&nbsp</span></h1>
+                    <h1 style="color: white; font-weight: bold; font-size: 60px; margin-bottom: 20px;">Selamat Datang Kembali<br><span style="background-color: black; border-radius: 120px 90px 60px 30px/30px 60px 90px 120px">&nbsp;Admin&nbsp;</span></h1>
                 </div>
             </div>
         @endhasrole
@@ -151,7 +146,7 @@
                 <div class="card" style="border-radius: 0;background-color: rgb(255,126,185)">
                 <div class="card-body">
                     <h5 class="card-title" style="border-bottom: solid 1px black">Manajemen Asesor</h5>
-                    <p class="card-text">Manage data-data dari asesor yang terdaftar</p>
+                    <p class="card-text">Manage data-data dari Asesor yang terdaftar</p>
                     <a href="{{ url('/index/dataasesor') }}" class="btn btn-outline-dark my-1">Lihat Data Asesor yang terdaftar</a>
                 </div>
                 </div>

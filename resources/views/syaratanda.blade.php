@@ -15,7 +15,7 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">&nbsp;</th>
                         <th scope="col">syarat</th>
                         <th scope="col">path_bukti</th>
                         <th scope="col">status verifikasi</th>
@@ -38,15 +38,15 @@
                         <form action="/datapsy/{{$syaratanda->id}}" method="POST" class="d-inline">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn bg-danger">Delete</button>
+                            <button type="submit" class="btn bg-danger" style="color: white">Delete</button>
                         </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-                <a href="{{ url('/index/psy') }}" class="btn bg-primary my-3">Isi berkas</a>
-                <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
+                <a href="{{ url('/index/psy') }}" class="btn bg-primary my-3" style="color: white">Isi berkas</a>
+                <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
 
     </div>
 @endsection
