@@ -117,4 +117,12 @@ class HomeController extends Controller
         
         return view('asesmen', compact('asesmen'));
     }
+
+    public function syarat(){
+        $syarat = DB::table('ref_jenis_sertifikasi as rjs')
+            ->join('syarat_sertifikasi as ss', 'rjs.id', '=', 'ss.id_ref_jenis_sertifikasi')
+            ->get();
+        
+        return view('syarat', compact('syarat'));
+    }
 }

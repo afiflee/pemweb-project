@@ -70,7 +70,9 @@ class pcontroller extends Controller
                 'status_pendaftaran' => $request->status_pendaftaran
             ]);
 
-		return redirect('/index/p')->with('status', 'data berhasil masuk');
+        auth()->user()->assignRole('pendaftar');
+
+		return redirect('/home')->with('status', 'Anda berhasil mendaftarkan diri pada sertifikasi, silakan lengkapi persyaratan');
     }
 
     /**

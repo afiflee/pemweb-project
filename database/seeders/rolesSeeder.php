@@ -34,6 +34,12 @@ class rolesSeeder extends Seeder
                     'created_at' => now(),
                     'updated_at' => now()
                 ),
+                array(
+                    'name' => 'pendaftar',
+                    'guard_name' => 'web',
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ),
             ));
     }
 }
