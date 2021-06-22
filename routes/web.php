@@ -45,6 +45,7 @@ Route::get('/syaratanda', [HomeController::class, 'syaratanda']);
 Route::get('/penawaran', [HomeController::class, 'penawaran']);
 Route::get('/hasil', [HomeController::class, 'hasil']);
 Route::get('/asesmen', [HomeController::class, 'asesmen']);
+Route::get('/syarat', [HomeController::class, 'syarat']);
 
 //tabel ref_jenis_sertifikasi
 Route::get('/index/rjs', [rjscontroller::class, 'create']);
@@ -77,6 +78,7 @@ Route::post('/index/asesi', [asesicontroller::class, 'store']);
 Route::delete('/dataasesi/{asesi}', [asesicontroller::class, 'destroy']);
 Route::get('/dataasesi/{asesi}/edit', [asesicontroller::class, 'edit']);
 Route::put('/dataasesi/{asesi}', [asesicontroller::class, 'update']);
+Route::get('/dataasesi/{asesi}/info', [asesicontroller::class, 'show']);
 
 //tabel ref_kegiatan
 Route::get('/index/rk', [rkcontroller::class, 'create']);

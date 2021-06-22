@@ -93,7 +93,11 @@ class asesicontroller extends Controller
      */
     public function show(asesi $asesi)
     {
-        //
+        $idasesi = DB::table('asesi')
+        ->join('users', 'asesi.id_user', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->value('asesi.id');
+        return view('/read/infoasesi', compact('asesi', 'idasesi'));
     }
 
     /**

@@ -134,6 +134,7 @@
                         </tr>
                     </tbody>
                  </table>
+                 <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
             </div>
         </div>
     </div>

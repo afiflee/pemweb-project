@@ -20,6 +20,7 @@
                         <th scope="col">id instrumen asesmen</th>
                         <th scope="col">jawaban self asesmen</th>
                         <th scope="col">path bukti</th>
+                        <th scope="col">Jawaban Asesor</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -31,6 +32,7 @@
                         <td>{{$pi -> id_instrumen_asesmen}}</td>
                         <td>{{$pi -> jawaban_self_asesmen}}</td>
                         <td>{{$pi -> path_bukti}}</td>
+                        <td>{{$pi -> jawaban_asesor_verifikasi}}</td>
                         <td>
                         <a href="/datapi/{{$pi->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datapi/{{$pi->id}}" method="POST" class="d-inline">
