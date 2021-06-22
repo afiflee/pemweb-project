@@ -28,10 +28,10 @@
                         <th scope="col">Email</th>
                         <th scope="col">Pendidikan</th>
                         <th scope="col">ID Unit</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created By</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Edited By</th>
-                        <th scope="col">Edited At</th>
+                        <th scope="col">Edited At</th> --}}
                         <th scope="col">ID User</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -52,10 +52,10 @@
                         <td>{{$ase -> email}}</td>
                         <td>{{$ase -> kualifikasi_pendidikan}}</td>
                         <td>{{$ase -> id_unit}}</td>
-                        <td>{{$ase -> created_by}}</td>
+                        {{-- <td>{{$ase -> created_by}}</td>
                         <td>{{$ase -> created_at}}</td>
                         <td>{{$ase -> edited_by}}</td>
-                        <td>{{$ase -> updated_at}}</td>
+                        <td>{{$ase -> updated_at}}</td> --}}
                         <td>{{$ase -> id_user}}</td>
                         <td>
                         <a href="/dataasesi/{{$ase->id}}/edit" class="btn bg-primary">Edit</a>

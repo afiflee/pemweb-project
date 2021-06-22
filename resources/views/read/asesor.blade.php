@@ -23,9 +23,9 @@
                         <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Jenis Kelamin</th>
                         <th scope="col">Alamat</th>
-                        <th scope="col">no telpon</th>
-                        <th scope="col">email</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">No Telepon</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

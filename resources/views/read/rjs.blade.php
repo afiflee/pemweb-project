@@ -18,10 +18,10 @@
                         <th scope="col">#</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created By</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Updated By</th>
-                        <th scope="col">Updated At</th>
+                        <th scope="col">Updated At</th> --}}
                         <th scope="col">Aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -32,10 +32,10 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$rjs -> nama}}</td>
                         <td>{{$rjs -> status_jenis_sertifikasi}}</td>
-                        <td>{{$rjs -> created_by}}</td>
+                        {{-- <td>{{$rjs -> created_by}}</td>
                         <td>{{$rjs -> created_at}}</td>
                         <td>{{$rjs -> edited_by}}</td>
-                        <td>{{$rjs -> updated_at}}</td>
+                        <td>{{$rjs -> updated_at}}</td> --}}
                         <td>
                         <!-- {{$rjs -> is_aktif}} -->
                         @if ($rjs -> is_aktif == 1)

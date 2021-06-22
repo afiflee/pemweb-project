@@ -19,9 +19,9 @@
                         <th scope="col">ID Pendaftar</th>
                         <th scope="col">ID Kuesioner</th>
                         <th scope="col">Jawaban</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created By</th>
                         <th scope="col">Created At</th>
-                        <th scope="col">Edited By</th>
+                        <th scope="col">Edited By</th> --}}
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -32,9 +32,9 @@
                         <td>{{$pendaftarkuesioner -> id_pendaftar}}</td>
                         <td>{{$pendaftarkuesioner -> id_kuesioner}}</td>
                         <td>{{$pendaftarkuesioner -> jawaban}}</td>
-                        <td>{{$pendaftarkuesioner -> created_by}}</td>
+                        {{-- <td>{{$pendaftarkuesioner -> created_by}}</td>
                         <td>{{$pendaftarkuesioner -> created_at}}</td>
-                        <td>{{$pendaftarkuesioner -> edited_by}}</td>
+                        <td>{{$pendaftarkuesioner -> edited_by}}</td> --}}
                         <td>
                         <a href="/datapk/{{$pendaftarkuesioner->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datapk/{{$pendaftarkuesioner->id}}" method="POST" class="d-inline">

@@ -19,10 +19,10 @@
                         <th scope="col">ID Ref Jenis Sertifikasi</th>
                         <th scope="col">Deskripsi Penawaran</th>
                         <th scope="col">Periode</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created By</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Edited By</th>
-                        <th scope="col">Edited At</th>
+                        <th scope="col">Edited At</th> --}}
                         <th scope="col">Aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -34,10 +34,10 @@
                         <td>{{$ps -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ps -> deskripsi_penawaran}}</td>
                         <td>{{$ps -> periode}}</td>
-                        <td>{{$ps -> created_by}}</td>
+                        {{-- <td>{{$ps -> created_by}}</td>
                         <td>{{$ps -> created_at}}</td>
                         <td>{{$ps -> edited_by}}</td>
-                        <td>{{$ps -> updated_at}}</td>
+                        <td>{{$ps -> updated_at}}</td> --}}
                         <td>@if ($ps -> is_aktif == 1)
                         Aktif
                         @else

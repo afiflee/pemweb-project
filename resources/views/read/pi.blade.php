@@ -22,12 +22,12 @@
                         <th scope="col">Path Bukti</th>
                         <th scope="col">Komentar Bukti</th>
                         <th scope="col">Jawaban Asesor Verifikasi</th>
-                        <th scope="col">Verified By</th>
+                        {{-- <th scope="col">Verified By</th>
                         <th scope="col">Verified At</th>
                         <th scope="col">Created By</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Edited By</th>
-                        <th scope="col">Edited At</th>
+                        <th scope="col">Edited At</th> --}}
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -41,12 +41,12 @@
                         <td>{{$pi -> path_bukti}}</td>
                         <td>{{$pi -> komentar_bukti}}</td>
                         <td>{{$pi -> jawaban_asesor_verifikasi}}</td>
-                        <td>{{$pi -> verified_by}}</td>
+                        {{-- <td>{{$pi -> verified_by}}</td>
                         <td>{{$pi -> verified_at}}</td>
                         <td>{{$pi -> created_by}}</td>
                         <td>{{$pi -> created_at}}</td>
                         <td>{{$pi -> edited_by}}</td>
-                        <td>{{$pi -> updated_at}}</td>
+                        <td>{{$pi -> updated_at}}</td> --}}
                         <td>
                         <a href="/datapi/{{$pi->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datapi/{{$pi->id}}" method="POST" class="d-inline">

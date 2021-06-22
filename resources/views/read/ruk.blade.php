@@ -16,7 +16,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Unit</th>
+                        <th scope="col">Nama Unit</th>
                         <th scope="col">Aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>

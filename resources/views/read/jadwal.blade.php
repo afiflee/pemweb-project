@@ -20,8 +20,8 @@
                         <th scope="col">ID Kegiatan</th>
                         <th scope="col">Tanggal Mulai</th>
                         <th scope="col">Tanggal Selesai</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created At</th>
+                        <th scope="col">Created By</th> --}}
                         <th scope="col">Aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -34,8 +34,8 @@
                         <td>{{$jadwal -> id_kegiatan}}</td>
                         <td>{{$jadwal -> tanggal_awal}}</td>
                         <td>{{$jadwal -> tanggal_akhir}}</td>
-                        <td>{{$jadwal -> created_at}}</td>
-                        <td>{{$jadwal -> created_by}}</td>
+                        {{-- <td>{{$jadwal -> created_at}}</td>
+                        <td>{{$jadwal -> created_by}}</td> --}}
                         <td>{{$jadwal -> is_show}}</td>
                         <td>
                         <a href="/datajadwal/{{$jadwal->id}}/edit" class="btn bg-primary">Edit</a>

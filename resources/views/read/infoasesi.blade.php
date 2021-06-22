@@ -15,7 +15,7 @@
                     <p class="card-text">Jenis Kelamin : {{$asesi -> jenis_kelamin}}</p>
                     <p class="card-text">Alamat : {{$asesi -> alamat}}</p>
                     <p class="card-text">No Telpon : {{$asesi -> no_telpon}}</p>
-                    <p class="card-text">email : {{$asesi -> email}}</p>
+                    <p class="card-text">Email : {{$asesi -> email}}</p>
                     <p class="card-text">Kualifikasi Pendidikan : {{$asesi -> kualifikasi_pendidikan}}</p>
                 </div>
             </div>

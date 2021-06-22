@@ -18,8 +18,8 @@
                         <th scope="col">#</th>
                         <th scope="col">Kegiatan</th>
                         <th scope="col">Deskripsi</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Created By</th>
+                        {{-- <th scope="col">Created At</th>
+                        <th scope="col">Created By</th> --}}
                         <th scope="col">aksi</th>
                     </tr>
                 </thead>
@@ -29,8 +29,8 @@
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$rk -> nama_kegiatan}}</td>
                         <td>{{$rk -> deskripsi}}</td>
-                        <td>{{$rk -> created_at}}</td>
-                        <td>{{$rk -> created_by}}</td>
+                        {{-- <td>{{$rk -> created_at}}</td>
+                        <td>{{$rk -> created_by}}</td> --}}
                         <td>
                         <a href="/datark/{{$rk->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datark/{{$rk->id}}" method="POST" class="d-inline">
