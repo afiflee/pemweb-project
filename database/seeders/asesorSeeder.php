@@ -27,7 +27,6 @@ class asesorSeeder extends Seeder
                     'alamat' => 'jakarta',
                     'no_telpon' => '081808180818',
                     'email' => 'asesor@asesor.com',
-                    'id_user' => 3
                 )
             )
         );
