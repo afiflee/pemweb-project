@@ -67,11 +67,8 @@ class asesorcontroller extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
             'no_telpon' => $request->no_telpon,
-            'email' => $request->email,
-            'id_user' => Auth::user()->id
+            'email' => $request->email
         ]);
-
-        auth()->user()->assignRole('asesor');
 
         return redirect('/home')->with('status', 'Anda berhasil terdaftar sebagai asesor');
     }
