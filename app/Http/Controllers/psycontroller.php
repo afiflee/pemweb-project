@@ -48,7 +48,6 @@ class psycontroller extends Controller
     {
         $request->validate([
             'id_syarat_sertifikasi' => 'required',
-            'status_verifikasi_syarat' => 'required',
             'path_bukti' => 'required',
         ]);
 
@@ -65,7 +64,6 @@ class psycontroller extends Controller
         pendaftarsyarat::create([
                 'id_syarat_sertifikasi' => $request->id_syarat_sertifikasi,
                 'id_pendaftar' => $idpendaftar,
-                'status_verifikasi_syarat' => $request->status_verifikasi_syarat,
                 'path_bukti' => $request->path_bukti,
                 'verified_by' => Auth::user()->name,
                 'verified_at' => now(),
@@ -73,7 +71,7 @@ class psycontroller extends Controller
                 'edited_by' => Auth::user()->name
             ]);
 
-		return redirect('/index/psy')->with('status', 'data berhasil masuk');
+		return redirect('/syaratanda')->with('status', 'Anda berhasil menambahkan berkas');
     }
 
     /**
@@ -136,6 +134,6 @@ class psycontroller extends Controller
     public function destroy(pendaftarsyarat $pendaftarsyarat)
     {
         pendaftarsyarat::destroy($pendaftarsyarat->id);
-        return redirect('/index/datapsy')->with('status', 'data berhasil dihapus');
+        return redirect('/syaratanda')->with('status', 'data berhasil dihapus');
     }
 }

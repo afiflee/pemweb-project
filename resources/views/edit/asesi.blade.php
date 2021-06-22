@@ -71,7 +71,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">ubah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">ubah Data</button>
                 </form>
             </div>
         </div>

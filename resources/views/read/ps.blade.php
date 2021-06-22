@@ -31,10 +31,8 @@
                     @foreach($ps as $ps)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
-                        <td>{{$ps -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ps -> deskripsi_penawaran}}</td>
                         <td>{{$ps -> periode}}</td>
-                        <td>{{$ps -> created_by}}</td>
                         <td>{{$ps -> created_at}}</td>
                         <td>{{$ps -> edited_by}}</td>
                         <td>{{$ps -> updated_at}}</td>
@@ -55,7 +53,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/ps') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

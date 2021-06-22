@@ -53,7 +53,7 @@
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="masukkan email" value="{{ $asesor->email }}">
                         @error('email') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary">Ubah Data</button>
+                    <button type="submit" class="btn bg-primary" style="color: white">Ubah Data</button>
                 </form>
             </div>
         </div>

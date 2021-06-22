@@ -16,7 +16,6 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id ref jenis sertifikasi</th>
                         <th scope="col">syarat</th>
                         <th scope="col">aktif</th>
                         <th scope="col">aksi</th>
@@ -26,7 +25,6 @@
                     @foreach($ss as $ss)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
-                        <td>{{$ss -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ss -> syarat}}</td>
                         <td>@if ($ss -> is_aktif == 1)
                         Aktif
@@ -45,7 +43,9 @@
                     @endforeach
                 </tbody>
             </table>
+            @hasrole('admin')
                 <a href="{{ url('/index/ss') }}" class="btn bg-primary my-3">Tambah Data</a>
+                @endhasrole
                 <a href="{{ url('/home') }}" class="btn bg-success my-3">Kembali ke Homepage</a>
         </div>
     </div>

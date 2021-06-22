@@ -22,7 +22,7 @@
                         <textarea type="text" class="form-control @error('jawaban') is-invalid @enderror" id="jawaban" name="jawaban" placeholder="Masukkan jawaban kuesioner">{{$pendaftarkuesioner->jawaban}}</textarea>
                         @error('jawaban') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Ubah Data</button>
 				</form>
             </div>
         </div>

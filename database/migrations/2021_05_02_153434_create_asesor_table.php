@@ -24,6 +24,7 @@ class CreateAsesorTable extends Migration
             $table->text('alamat');
             $table->string('no_telpon');
             $table->string('email');
+            $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

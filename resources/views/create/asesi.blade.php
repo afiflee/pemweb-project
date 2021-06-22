@@ -79,7 +79,6 @@
                     <button type="submit" class="btn bg-primary my-3" style="color: white">Tambah Data</button>
                     @hasrole('admin')
                     <a href="{{ url('/index/dataasesi') }}" class="btn bg-warning my-3" style="color: white">Lihat Data</a>
-                    @else
                     @endhasrole
                     <a href="{{ url('/home') }}" class="btn bg-success my-3" style="color: white">Kembali ke Homepage</a>
                 </form>

@@ -20,7 +20,7 @@
                             <option value="0">Tidak Aktif</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn bg-primary my-3">Ubah Data</button>
+                    <button type="submit" class="btn bg-primary my-3" style="color: white">Ubah Data</button>
                 </form>
             </div>
         </div>

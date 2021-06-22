@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\asesor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class asesorcontroller extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(['role:admin'])->only('index', 'edit', 'update', 'destroy');
-        $this->middleware(['role:asesor'])->only('edit', 'update');
+        $this->middleware(['role:admin|asesor'])->only('index', 'edit', 'update', 'destroy');
     }
 
     /**
@@ -67,12 +67,13 @@ class asesorcontroller extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
             'no_telpon' => $request->no_telpon,
-            'email' => $request->email
+            'email' => $request->email,
+            'id_user' => Auth::user()->id
         ]);
 
         auth()->user()->assignRole('asesor');
 
-        return redirect('/index/asesor')->with('status', 'data berhasil masuk');
+        return redirect('/home')->with('status', 'Anda berhasil terdaftar sebagai asesor');
     }
 
     /**
