@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>pendaftar syarat</h1>
+            <h1>Pendaftar Syarat</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,9 +16,18 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id syarat</th>
-                        <th scope="col">id pendaftar</th>
-                        <th scope="col">status verifikasi syarat</th>
+                        <th scope="col">ID Syarat Sertifikasi</th>
+                        <th scope="col">ID Pendaftar</th>
+                        <th scope="col">Status Verifikasi Syarat</th>
+                        <th scope="col">Path Bukti</th>
+                        <th scope="col">Verifikasi Asesor</th>
+                        <th scope="col">Komentar Asesor</th>
+                        <th scope="col">Verified By</th>
+                        <th scope="col">Verified At</th>
+                        <th scope="col">Created By</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Edited By</th>
+                        <th scope="col">Edited At</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -29,6 +38,15 @@
                         <td>{{$psy -> id_syarat_sertifikasi}}</td>
                         <td>{{$psy -> id_pendaftar}}</td>
                         <td>{{$psy -> status_verifikasi_syarat}}</td>
+                        <td>{{$psy -> path_bukti}}</td>
+                        <td>{{$psy -> verifikasi_asesor}}</td>
+                        <td>{{$psy -> komentar_asesor}}</td>
+                        <td>{{$psy -> verified_by}}</td>
+                        <td>{{$psy -> verified_at}}</td>
+                        <td>{{$psy -> created_by}}</td>
+                        <td>{{$psy -> created_at}}</td>
+                        <td>{{$psy -> edited_by}}</td>
+                        <td>{{$psy -> updated_at}}</td>
                         <td>
                         <a href="/datapsy/{{$psy->id}}/edit" class="btn bg-primary">Edit</a>
                         <form action="/datapsy/{{$psy->id}}" method="POST" class="d-inline">

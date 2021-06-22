@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
             <h1>ref jenis Sertifikasi</h1>
 

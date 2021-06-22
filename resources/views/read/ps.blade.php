@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>penawaran sertifikasi</h1>
+            <h1>Penawaran Sertifikasi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,15 +16,15 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id_ref_jenis_sertifikasi</th>
-                        <th scope="col">deskripsi_penawaran</th>
-                        <th scope="col">periode</th>
-                        <th scope="col">created_by</th>
-                        <th scope="col">created_at</th>
-                        <th scope="col">updated_at</th>
-                        <th scope="col">edited_by</th>
-                        <th scope="col">aktif</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">ID Ref Jenis Sertifikasi</th>
+                        <th scope="col">Deskripsi Penawaran</th>
+                        <th scope="col">Periode</th>
+                        <th scope="col">Created By</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Edited By</th>
+                        <th scope="col">Edited At</th>
+                        <th scope="col">Aktif</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,8 +36,8 @@
                         <td>{{$ps -> periode}}</td>
                         <td>{{$ps -> created_by}}</td>
                         <td>{{$ps -> created_at}}</td>
-                        <td>{{$ps -> updated_at}}</td>
                         <td>{{$ps -> edited_by}}</td>
+                        <td>{{$ps -> updated_at}}</td>
                         <td>@if ($ps -> is_aktif == 1)
                         Aktif
                         @else

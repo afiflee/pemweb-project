@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
-            <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+            <div class="col-12">
+                <h1 class="mt-3">Tambah Jadwal</h1>
                 <hr>
                 <form method="POST" action="/index/jadwal">
                     @csrf
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 					<div class="form-group my-3">
-                        <label for="id_penawaran_sertifikasi">id penawaran</label>
+                        <label for="id_penawaran_sertifikasi">ID Penawaran Sertifikasi</label>
                         <select class="form-control @error('id_penawaran_sertifikasi') is-invalid @enderror" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi">
                             @foreach($penawaran as $penawaran)
                                 <option value="{{$penawaran->id}}">{{$penawaran->deskripsi_penawaran}}</option>
@@ -23,7 +23,7 @@
                         @error('id_penawaran_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="id_kegiatan">id kegiatan</label>
+                        <label for="id_kegiatan">ID Kegiatan</label>
                         <select class="form-control @error('id_kegiatan') is-invalid @enderror" id="id_kegiatan" name="id_kegiatan">
                             @foreach($kegiatan as $kegiatan)
                                 <option value="{{$kegiatan->id}}">{{$kegiatan->nama_kegiatan}}</option>
@@ -32,17 +32,17 @@
                         @error('id_kegiatan') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="tanggal_awal">Tanggal awal</label>
+                        <label for="tanggal_awal">Tanggal Mulai</label>
                         <input type="date" class="form-control @error('tanggal_awal') is-invalid @enderror" id="tanggal_awal" name="tanggal_awal" placeholder="Tanggal awal" value="{{old('tanggal_awal')}}">
                         @error('tanggal_awal') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="tanggal_akhir">Tanggal akhir</label>
+                        <label for="tanggal_akhir">Tanggal Selesai</label>
                         <input type="date" class="form-control @error('tanggal_akhir') is-invalid @enderror" id="tanggal_akhir" name="tanggal_akhir" placeholder="Tanggal akhir" value="{{old('tanggal_akhir')}}">
                         @error('tanggal_akhir') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="deskripsi">deskripsi</label>
+                        <label for="deskripsi">Deskripsi</label>
                         <textarea type="text" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kegiatan"> {{old('deskripsi')}}</textarea>
                         @error('deskripsi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>

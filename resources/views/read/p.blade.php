@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
             <h1>Pendaftar</h1>
 
@@ -16,11 +16,15 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id penawaran</th>
-                        <th scope="col">id asesi</th>
-                        <th scope="col">status akhir</th>
-                        <th scope="col">tanggal_status_akhir</th>
-                        <th scope="col">status pendaftaran</th>
+                        <th scope="col">ID Penawaran Sertifikasi</th>
+                        <th scope="col">ID Asesi</th>
+                        <th scope="col">Status Akhir Sertifikasi</th>
+                        <th scope="col">Tanggal Status Akhir</th>
+                        <th scope="col">Created By</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Edited By</th>
+                        <th scope="col">Edited At</th>
+                        <th scope="col">Status Pendaftaran</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -32,6 +36,10 @@
                         <td>{{$p -> id_asesi}}</td>
                         <td>{{$p -> status_akhir_sertifikasi}}</td>
                         <td>{{$p -> tanggal_status_akhir}}</td>
+                        <td>{{$p -> created_by}}</td>
+                        <td>{{$p -> created_at}}</td>
+                        <td>{{$p -> edited_by}}</td>
+                        <td>{{$p -> updated_at}}</td>
                         <td>{{$p -> status_pendaftaran}}</td>
                         <td>
                         <a href="/datap/{{$p->id}}/edit" class="btn bg-primary">Edit</a>

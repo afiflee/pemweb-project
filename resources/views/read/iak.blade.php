@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>instrumen asesmen kompetensi</h1>
+            <h1>Instrumen Asesmen Kompetensi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,11 +16,11 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id_ref_unit_kompetensi</th>
-                        <th scope="col">instrumen_pertanyaan</th>
-                        <th scope="col">status_instrumen</th>
-                        <th scope="col">aktif</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">ID Ref Unit Komptensi</th>
+                        <th scope="col">Instrumen Pertanyaan</th>
+                        <th scope="col">Status Instrumen</th>
+                        <th scope="col">Aktif</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
-            <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+            <div class="col-12">
+                <h1 class="mt-3">Tambah Asesi</h1>
                 <hr>
                 <form method="POST" action="/index/asesi">
                     @csrf
@@ -14,23 +14,23 @@
                         </div>
                     @endif
                     <div class="form-group my-3">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="Masukkan Nama" value="{{old('nama')}}">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="masukkan nama lengkap" value="{{old('nama')}}">
                         @error('nama') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="nim">NIM</label>
-                        <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" placeholder="Masukkan nim" value="{{old('nim')}}">
+                        <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" name="nim" placeholder="masukkan NIM" value="{{old('nim')}}">
                         @error('nim') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="nik">NIK</label>
-                        <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" placeholder="Masukkan nik" value="{{old('nik')}}">
+                        <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" placeholder="masukkan NIK" value="{{old('nik')}}">
                         @error('nik') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
                         <label for="tempat_lahir">Tempat Lahir</label>
-                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" value="{{old('tempat_lahir')}}">
+                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="tempat_lahir" name="tempat_lahir" placeholder="tempat Lahir" value="{{old('tempat_lahir')}}">
                         @error('tempat_lahir') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
@@ -44,8 +44,8 @@
                         @error('jenis_kelamin') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="id_ref_negara">id ref negara</label>
-                        <input type="text" class="form-control @error('id_ref_negara') is-invalid @enderror" id="id_ref_negara" name="id_ref_negara" placeholder="id negara" value="{{old('id_ref_negara')}}">
+                        <label for="id_ref_negara">ID Ref Negara</label>
+                        <input type="text" class="form-control @error('id_ref_negara') is-invalid @enderror" id="id_ref_negara" name="id_ref_negara" placeholder="masukkan ID negara" value="{{old('id_ref_negara')}}">
                         @error('id_ref_negara') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
@@ -54,8 +54,8 @@
                         @error('alamat') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="no_telpon">No Telepon</label>
-                        <input type="tel" class="form-control @error('no_telpon') is-invalid @enderror" id="no_telpon" name="no_telpon" placeholder="masukkan nomor telepon" value="{{old('no_telpon')}}">
+                        <label for="no_telpon">Nomor HP/Telepon</label>
+                        <input type="tel" class="form-control @error('no_telpon') is-invalid @enderror" id="no_telpon" name="no_telpon" placeholder="masukkan no telepon" value="{{old('no_telpon')}}">
                         @error('no_telpon') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group my-3">
                         <label for="kualifikasi_pendidikan">Kualifikasi Pendidikan</label>
-                        <input type="text" class="form-control @error('kualifikasi_pendidikan') is-invalid @enderror" id="kualifikasi_pendidikan" name="kualifikasi_pendidikan" placeholder="Pendidikan" value="{{old('kualifikasi_pendidikan')}}">
+                        <input type="text" class="form-control @error('kualifikasi_pendidikan') is-invalid @enderror" id="kualifikasi_pendidikan" name="kualifikasi_pendidikan" placeholder="kualifikasi pendidikan" value="{{old('kualifikasi_pendidikan')}}">
                         @error('kualifikasi_pendidikan') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">

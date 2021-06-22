@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
-        <div class="row">
+        <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>asesor pendaftar</h1>
+            <h1>Asesor Pendaftar</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,10 +16,10 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id asesor jenis sertifikasi</th>
-                        <th scope="col">id pendaftar</th>
-                        <th scope="col">hasil</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">ID Asesor Jenis Sertifikasi</th>
+                        <th scope="col">ID Pendaftar</th>
+                        <th scope="col">Hasil</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
