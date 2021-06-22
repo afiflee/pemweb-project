@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>Asesmen yang telah anda isi</h1>
+            <h1>Asesmen yang telah Anda isi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -15,10 +15,10 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">Pertanyaan asesmen</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Pertanyaan Asesmen</th>
                         <th scope="col">Jawaban Anda</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>

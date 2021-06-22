@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>List Jadwal Kegiatan yang tersedia</h1>
+            <h1>List jadwal kegiatan</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -15,13 +15,12 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">nama kegiatan</th>
-                        <th scope="col">deskripsi</th>
-                        <th scope="col">deskripsi penawaran</th>
-                        <th scope="col">tanggal awal</th>
-                        <th scope="col">tanggal akhir</th>
-                        
+                        <th scope="col">#</th>
+                        <th scope="col">Kegiatan</th>
+                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Penawaran</th>
+                        <th scope="col">Tanggal Mulai</th>
+                        <th scope="col">Tanggal Selesai</th>
                     </tr>
                 </thead>
                 <tbody>

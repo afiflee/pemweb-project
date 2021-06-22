@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
-            <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+            <div class="col-12">
+                <h1 class="mt-3">Tambah Ref Unit Kompetensi</h1>
                 <hr>
                 <form method="POST" action="/index/ruk">
                     @csrf

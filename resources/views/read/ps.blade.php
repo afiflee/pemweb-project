@@ -31,8 +31,10 @@
                     @foreach($ps as $ps)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
+                        <td>{{$ps -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ps -> deskripsi_penawaran}}</td>
                         <td>{{$ps -> periode}}</td>
+                        <td>{{$ps -> created_by}}</td>
                         <td>{{$ps -> created_at}}</td>
                         <td>{{$ps -> edited_by}}</td>
                         <td>{{$ps -> updated_at}}</td>

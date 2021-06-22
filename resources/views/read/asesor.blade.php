@@ -25,7 +25,7 @@
                         <th scope="col">Alamat</th>
                         <th scope="col">no telpon</th>
                         <th scope="col">email</th>
-                        <th scope="col">aksi</th> 
+                        <th scope="col">aksi</th>
                     </tr>
                 </thead>
                 <tbody>

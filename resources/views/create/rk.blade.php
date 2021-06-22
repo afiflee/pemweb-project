@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
-            <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+            <div class="col-12">
+                <h1 class="mt-3">Tambah Ref Kegiatan</h1>
                 <hr>
                 <form method="POST" action="/index/rk">
                     @csrf
@@ -14,12 +14,12 @@
                         </div>
                     @endif
                     <div class="form-group my-3">
-                        <label for="nama_kegiatan">nama kegiatan</label>
+                        <label for="nama_kegiatan">Kegiatan</label>
                         <input type="text" class="form-control @error('nama_kegiatan') is-invalid @enderror" id="nama_kegiatan" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" value="{{old('nama_kegiatan')}}">
                         @error('nama_kegiatan') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="deskripsi">deskripsi</label>
+                        <label for="deskripsi">Deskripsi</label>
                         <textarea type="text" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" placeholder="Masukkan deskripsi kegiatan">{{old('deskripsi')}}</textarea>
                         @error('deskripsi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>

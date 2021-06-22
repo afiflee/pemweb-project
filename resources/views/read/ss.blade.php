@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>syarat sertifikasi</h1>
+            <h1>Syarat Sertifikasi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,15 +16,17 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">syarat</th>
-                        <th scope="col">aktif</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">ID Ref Jenis Sertifikasi</th>
+                        <th scope="col">Syarat</th>
+                        <th scope="col">Aktif</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($ss as $ss)
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
+                        <td>{{$ss -> id_ref_jenis_sertifikasi}}</td>
                         <td>{{$ss -> syarat}}</td>
                         <td>@if ($ss -> is_aktif == 1)
                         Aktif

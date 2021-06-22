@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>ref kuesioner</h1>
+            <h1>Ref Kuesioner</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,9 +16,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">pertanyaan</th>
-                        <th scope="col">aktif</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">Pertanyaan</th>
+                        <th scope="col">Aktif</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

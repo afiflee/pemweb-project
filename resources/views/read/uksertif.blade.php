@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>unit kompetensi sertifikasi</h1>
+            <h1>Unit Kompetensi Sertifikasi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,10 +16,10 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">id ref jenis sertifikasi</th>
-                        <th scope="col">id ref kompetensi</th>
-                        <th scope="col">aktif</th>
-                        <th scope="col">aksi</th>
+                        <th scope="col">ID Ref Jenis Sertifikasi</th>
+                        <th scope="col">ID Ref Unit Kompetensi</th>
+                        <th scope="col">Aktif</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

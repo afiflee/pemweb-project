@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>Syarat yang sudah anda isi</h1>
+            <h1>Syarat yang sudah Anda isi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -15,14 +15,14 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">syarat</th>
-                        <th scope="col">path_bukti</th>
-                        <th scope="col">status verifikasi</th>
-                        <th scope="col">verifikasi asesor</th>
-                        <th scope="col">komentar asesor</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Syarat</th>
+                        <th scope="col">Path Bukti</th>
+                        <th scope="col">Status Verifikasi</th>
+                        <th scope="col">Verifikasi Asesor</th>
+                        <th scope="col">Komentar Asesor</th>
                         <th scope="col">Hapus Syarat</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>

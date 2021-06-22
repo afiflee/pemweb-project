@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>Hasil Sertifikasi Anda</h1>
+            <h1>Hasil sertifikasi Anda</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -15,10 +15,9 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">nama sertifikasi</th>
-                        <th scope="col">hasil</th>
-                        
+                        <th scope="col">#</th>
+                        <th scope="col">Sertifikasi</th>
+                        <th scope="col">Hasil</th>
                     </tr>
                 </thead>
                 <tbody>

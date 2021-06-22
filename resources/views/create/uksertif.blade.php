@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row "> <!--justify-content-center-->
-            <div class="col-6">
-                <h1 class="mt-3">Tambah Data</h1>
+            <div class="col-12">
+                <h1 class="mt-3">Tambah Unit Kompetensi Sertifikasi</h1>
                 <hr>
                 <form method="POST" action="/index/uksertif">
                     @csrf
@@ -14,7 +14,7 @@
                         </div>
                     @endif
                     <div class="form-group my-3">
-                        <label for="id_ref_jenis_sertifikasi">id jenis sertifikasi</label>
+                        <label for="id_ref_jenis_sertifikasi">ID Ref Jenis Sertifikasi</label>
                         <select class="form-control @error('id_ref_jenis_sertifikasi') is-invalid @enderror" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi">
                             @foreach($jenis as $jenis)
                                 <option value="{{$jenis->id}}">{{$jenis->nama}}</option>
@@ -23,7 +23,7 @@
                         @error('id_ref_jenis_sertifikasi') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="id_ref_kompetensi">nomor id unit komptensi</label>
+                        <label for="id_ref_kompetensi">ID Ref Unit Komptensi</label>
                         <select class="form-control @error('id_ref_kompetensi') is-invalid @enderror" id="id_ref_kompetensi" name="id_ref_kompetensi">
                             @foreach($unit as $unit)
                                 <option value="{{$unit->id}}">{{$unit->nama}}</option>

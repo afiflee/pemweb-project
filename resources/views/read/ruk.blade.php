@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row" style="overflow-x:auto;">
             <div class="col">
-            <h1>ref unit kompetensi</h1>
+            <h1>Ref Unit Kompetensi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,8 +16,8 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">aktif</th>
+                        <th scope="col">Unit</th>
+                        <th scope="col">Aktif</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>

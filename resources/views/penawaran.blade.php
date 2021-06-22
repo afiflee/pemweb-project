@@ -4,7 +4,7 @@
     <div class="container" style="background-color: white; border-radius: 10px;">
         <div class="row">
             <div class="col">
-            <h1>List Penawaran sertifikasi yang tersedia</h1>
+            <h1>List penawaran sertifikasi</h1>
 
             @if (session('status'))
                 <div class="alert alert-success">
@@ -15,13 +15,13 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">id penawaran</th>
-                        <th scope="col">nama Sertifikasi</th>
-                        <th scope="col">deskripsi penawaran</th>
+                        <th scope="col">#</th>
+                        <th scope="col">ID Penawaran</th>
+                        <th scope="col">Deskripsi Penawaran</th>
+                        <th scope="col">Sertifikasi</th>
                         <th scope="col">Periode</th>
-                        <th scope="col">status sertifikasi</th>
-                        
+                        <th scope="col">Status Sertifikasi</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -29,8 +29,8 @@
                     <tr>
                         <th scope="row">{{$loop -> iteration}}</th>
                         <td>{{$penawaran -> id}}</td>
-                        <td>{{$penawaran -> nama}}</td>
                         <td>{{$penawaran -> deskripsi_penawaran}}</td>
+                        <td>{{$penawaran -> nama}}</td>
                         <td>{{$penawaran -> periode}}</td>
                         <td>
                         @if ($penawaran -> is_aktif == 1)
